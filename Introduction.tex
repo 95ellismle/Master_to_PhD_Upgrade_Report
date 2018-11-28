@@ -1,0 +1,67 @@
+\chapter{Introduction}
+\label{chapterlabel1}
+\section{Organic Semiconductors}
+Conductive polymers were first discovered in 1977 by Shirakawa et al  \cite{chiang_electrical_1977, Shirakawa1977Jan} for which they were awarded the Nobel prize in Chemistry. Recently these materials have become ubiquitous in many technologies, such as in organic solar cells\cite{Kippelen2009}, organic field-effect transistors (OFET) \cite{Malachowski2010Jun} and organic light-emitting diodes (OLED) \cite{ThejoKalyani2012Jun}. While the other two technologies lag behind their inorganic counterparts, uptake of OLED screens is becoming increasingly popular especially in the smartphone and television market due to their flexibility, better colour reprsentation and lower energy consumption than conventional backlit LCD displays. In fact IHS markit's OLED market tracker predicts OLED to be the dominant technology in smartphone screens by 2020 \cite{IHSMarkit} \footnote{This is an online citation -Not sure whether I have cited correctly}. OLEDs have also found uses in lighting with their efficiency rivalling that of fluorescent tubes \cite{Reineke2009May, OLED_lighting}. Although, industry has made large strides in fabricating and using these materials the exact nature of the charge transport is still poorly understood. Conventional hopping and band theories break down in the regime of partial delocalisation of the charge carriers and atomistic simulations are required for a realistic picture.
+\\\\
+Hopping theories assume the charge carrier is localised on one site and can hop from site to site in a series of discrete hops \cite{oberhofer_charge_2017}. There are various underlying mechanisms for this. For example, the presence of the charge carrier at a site can alter the nuclear geometry. The distorted nuclear geometry can make it harder for the charge carrier to move onto the next site, creating a metastable state and trapping the charge carrier. The deformation in the nuclear geometry is called a small polaron.
+\\\\
+Typically charge carrier mobilities in `good' organic semiconductors (OSCs) fall between 1-10 cm$^2$ V$^{-1}$s$^{-1}$ \cite{yavuz_dichotomy_2017}. This is just beyond the range of hopping model validity ($\sim $ 1 cm$^2$ V$^{-1}$s$^{-1}$ ) and below that of band theory (> 50 cm$^2$ V$^{-1}$s$^{-1}$ ). In this intermediate regime the charge carriers are typically not completely delocalised at the valence band edges (band regime) or localised to a single site/molecule (hopping regime) but delocalised over a few molecules. Without any analytic approaches being valid in this regime many computational approaches have been developed to investigate the underlying charge transport mechanisms \cite{oberhofer_charge_2017}.
+
+
+\section{Nonadiabatic Dynamics}
+In simulating processes involving electronic transfers a key approximation used in conventional molecular dynamics (MD) breaks down. That is the Born-Oppenheimer or adiabatic approximation \cite{john_c._tully_nonadiabatic_nodate}. This approximation relies on the fact that nuclei are more massive than electrons and are approximately stationary with respect to electron movement (need ref). This results in nuclear evolution that is governed by a single, adiabatic, potential energy surface. However, in many interesting processes, such as electron transfer, non-radiative decay and photochemical processes, electronic transitions between adiabatic potential energy surfaces occur (need ref). Simulating these processes requires non-adiabatic molecular dynamics (NAMD) techniques to be developed to correctly capture dynamical properties.
+\\\\
+There have been many techniques proposed for use in NAMD such as the quantum classical Louiville equation (need ref), multiple spawning (need ref) or nonadiabatic Bohmian dynamics (need ref) \footnote{See first Frederica paper} . However, two of the most popular are trajectory surface hopping (need ref) and mean-field approaches (need ref). This is probably due to their relative simplicity to implement (need ref), efficiency for large systems (need ref) and proven efficacy in a wide variety of situations (need ref). In both of these approaches one treats the nuclear subsystem classically and the electronic one quantum mechanically. The electronic evolution is determined by the time-dependent Schr\"odinger equation, normally expanded as a linear combination of adiabatic or diabatic states. The Hamiltonian in this varies with nuclear position, coupling nuclear motion to electronic transitions. However, the nuclear evolution is slightly different in each technique. In surface hopping, the nuclei are propagated along a single purely adiabatic surface. Which one depends on a series of sudden, stochastic `hops' between surfaces -controlled by a hopping probability. This is calculated slightly differently for different flavours of surface hopping. Alternatively, in the mean-field approach the nuclei are propagated along a population-weighted average of the adiabatic states. Both methods have their advantages and disadvantages. However, in their original form, they both suffer from a well documented over-coherence of the nuclear and electronic subsytems (need ref). A novel technique has been derived to deal with this named coupled-trajectory mixed-quantum classical (CTMQC) molecular dynamics (need ref). CTMQC has been derived from the exact factorisation of the molecular wavefunction (need ref) and is the semi-classical limit.
+\\
+\\
+\section{CTMQC \label{intro:CTMQC}}
+The exact factorisation of the molecular wavefuntion involves re-writing it in terms of a nuclear and electronic component. Where the electronic term is parametrically dependent on the nuclear one. This is shown below in eq \eqref{eq:exact_fact} where $\chi$ is the nuclear wavefunction and $\Phi$ is the electronic one:
+\begin{equation}
+ \Psi(\textbf{R}, \textbf{r}, t) = \Phi_{\textbf{R}}(\textbf{r}, t) \chi(\textbf{R}, t)
+ \label{eq:exact_fact}
+ \end{equation}
+The nuclear and electronic wavefunctions then obey separate, but coupled, equations for spatial and temporal evolution. This representation has proven to be useful in furthering understanding through exact solutions of small toy-model systems (need ref \footnote{see deconstruction paper}) as well for creating a first-principles semi-classical limit of the Schr\"odinger equation. In this report I will focus on the latter and give some early results of an implementation of a highly efficient FOB-CTMQC algorithm designed for simulating systems of tens to hundreds of molecules -accounting correctly for decoherence.
+
+
+The equations for the evolution of the electronic and nuclear wavefunctions in the exact factorisation (need ref) are given below:
+\begin{eqnarray}
+  i\hbar \delta_t \Phi_{\textbf{R}}(\textbf{r}, t) &= \left( \hat{H}_{BO} + \hat{U}_{en}\left[ \Phi_{\textbf{R}}, \chi\right] - \epsilon(\textbf{R}, t) \right) \Phi_{\textbf{R}} (\textbf{r}, t)
+  \label{eq:electronic_exact}
+\\
+  i\hbar \delta_t \chi (\textbf{R}, t) &= \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i\hbar\nabla_{\nu} + \textbf{A}_{\nu}(\textbf{R}, t)]^2}{2 M_{\nu}} + \epsilon(\textbf{R}, t)\right) \chi (\textbf{R}, t)
+  \label{eq:nuclear_exact}
+\end{eqnarray}
+In the above equations $\Phi_{\textbf{R}}$ is the electronic which is parametrically dependent on the nuclear positions, $\textbf{R}$ as well as being explcitly dependent on electronic positions, $\textbf{r}$ and time, $t$. $\chi$ is the nuclear wavefunction. $\hat{H}_{BO}$ is the Born-Oppenheimer Hamiltonian containing the electronic kinetic energy operator, and interactions between the nuclei and electrons as well as nuclear and electronic self-interactions. The $M_{\nu}$ is the mass of nucleus, $\nu$. The $\textbf{A}_{\nu}$ is a time-dependent vector potential and $\epsilon$ is a time-dependent scalar potential. Finally the $\hat{U}_{en}$ is an operator coupling the nuclear and electronic wavefunctions. In Agostini, 16 (need ref) it was shown after applying five approximations, which are justified for many cases \footnote{Will need to remember what these are, and how they are justified!}, we can get the semi-classical limit of the exact factorisation equations.
+
+
+
+\newpage
+
+
+
+\begin{itemize}
+\item Brief introduction to NAMD.
+\begin{itemize}
+\item \st{Why isn't normal MD good enough?}
+\item \st{What sort of processes need NAMD to simulate them?}
+\item Characteristics of NAMD -Trivial Crossings, avoided crossings.
+\item Give current standard methods and their advantages/disadvantages
+\end{itemize}
+\item Briefly explain the AOM method.
+\begin{itemize}
+\item How it works - The analytic off-diagonal elements of hamiltonian (Spencer -both)
+\item What the alternatives are (Gajdos paper)
+\item Why this is preferable (Gajdos)
+\item What are the limitations
+\end{itemize}
+\item Explain CTMQC
+\begin{itemize}
+\item Intro -It was derived from exact factorisation (maybe put derivation in appendix)
+\item Give the equations. -Ehrenfest + QM term
+\item How does it compare to other techniques -decoherence, first principles
+\item Why combine it with FOB-CTMQC? -Expensive DFT etc...
+\item What sort of systems will I be looking at? Charge transfer in organic semiconductors -1D and 2D systems
+\end{itemize}
+
+\end{itemize}
+Then Results
