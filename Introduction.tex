@@ -54,17 +54,27 @@ CTMQC comes from taking the semi-classical limit of an exact factorisation of th
  \label{eq:exact_fact}
  \end{equation}
 In the above equation (and throughout this report) I will denote nuclear coordinates and electronic coordinates $R$ and $r$ respectively. The nuclear and electronic wavefunctions then obey separate, but coupled, time-dependent schr\"odinger equations for spatial and temporal evolution. This representation has proven to be useful in furthering understanding through exact solutions of small toy-model systems (need ref \footnote{see deconstruction paper}). However, in this report I will be focussing on the semi-classical limit of these equations (CTMQC) and give some early results of a combination of this and the AOM method explained previously in section \ref{sec:FOB-formalism}.
-\\\\\\\\\\\\\\\\\\\
-The equations for the evolution of the electronic and nuclear wavefunctions in the exact factorisation (need ref) are given below:
-\begin{eqnarray}
-  i\hbar \delta_t \Phi_{\textbf{R}}(\textbf{r}, t) &= \left( \hat{H}_{BO} + \hat{U}_{en}\left[ \Phi_{\textbf{R}}, \chi\right] - \epsilon(\textbf{R}, t) \right) \Phi_{\textbf{R}} (\textbf{r}, t)
+The equations for the evolution of the electronic and nuclear wavefunctions in the exact factorisation \cite{abedi_exact_2010} are given below:
+\begin{align}
+  i\hbar \frac{\delta}{\delta t} \Phi_{\textbf{R}}(\textbf{r}, t) &= \left( \hat{H}_{BO} + \hat{U}_{en}\left[ \Phi_{\textbf{R}}, \chi\right] - \epsilon(\textbf{R}, t) \right) \Phi_{\textbf{R}} (\textbf{r}, t)
   \label{eq:electronic_exact}
 \\
-  i\hbar \delta_t \chi (\textbf{R}, t) &= \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i\hbar\nabla_{\nu} + \textbf{A}_{\nu}(\textbf{R}, t)]^2}{2 M_{\nu}} + \epsilon(\textbf{R}, t)\right) \chi (\textbf{R}, t)
+i\hbar \frac{\delta}{\delta t} \chi (\textbf{R}, t) &= \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i\hbar\nabla_{\nu} + \textbf{A}_{\nu}(\textbf{R}, t)]^2}{2 M_{\nu}} + \epsilon(\textbf{R}, t)\right) \chi (\textbf{R}, t)
   \label{eq:nuclear_exact}
-\end{eqnarray}
-In the above equations $\Phi_{\textbf{R}}$ is the electronic which is parametrically dependent on the nuclear positions, $\textbf{R}$ as well as being explcitly dependent on electronic positions, $\textbf{r}$ and time, $t$. $\chi$ is the nuclear wavefunction. $\hat{H}_{BO}$ is the Born-Oppenheimer Hamiltonian containing the electronic kinetic energy operator, and interactions between the nuclei and electrons as well as nuclear and electronic self-interactions. The $M_{\nu}$ is the mass of nucleus, $\nu$. The $\textbf{A}_{\nu}$ is a time-dependent vector potential and $\epsilon$ is a time-dependent scalar potential. Finally the $\hat{U}_{en}$ is an operator coupling the nuclear and electronic wavefunctions. In Agostini, 16 (need ref) it was shown after applying five approximations, which are justified for many cases \footnote{Will need to remember what these are, and how they are justified!}, we can get the semi-classical limit of the exact factorisation equations.
-
+\end{align}
+Where $\hat{H}_{BO}$ is the Born-Oppenheimer Hamiltonian, that is $\hat{T}_{e} + \hat{W}_{ee} + \hat{W}_{nn} + \hat{V}_{en}$. Where $\hat{T}_{e}$ is the electronic kinetic energy operator, $\hat{W}_{ee/nn}$ is the electron-electron/nuclei-nuclei interation and $V_{en}$ is the electronic-nuclear potential.
+\\\\
+The $\hat{U}_{en}$ is an electronic-nuclear coupling operator (ENCO). This is defined as $  \hat{U}_{en}[\Phi_{\textbf{R}}, \chi] = \sum_{\nu=1}^{N_{nuc}} \frac{1}{M_{\nu}} \left[ \frac{\left[-i \hbar \nabla_{\nu} - \textbf{A}_{\nu}(\textbf{R}, t) \right]^2}{2} + \left( \left. \left. \frac{-i\hbar \nabla_{\nu} \chi}{\chi} + \textbf{A}_{\nu}(\textbf{R, t})\right)\right( -i\hbar\nabla_{\nu} - \textbf{A}_{\nu}(\textbf{R}, t)\right) \right]   $.
+Where the $\textbf{A}_{\nu}$ is a time-dependent vector potential (TDVP), given by $\left\langle \Phi_{\textbf{R}}(t) \right\vert \left. - i \hbar \nabla_{\nu} \Phi_{\textbf{R}} \right\rangle_{\textbf{r}}$ and $M_{\nu}$ is the mass of nuclei $\nu$.
+Finally $\epsilon(\textbf{R}, t)$ is a time-dependent scalar potential energy surface (TDPES), given by $\langle \Phi_{\textbf{R}}(t) \vert \hat{H}_{BO} + \hat{U}_{en}^{coup} - i\hbar \frac{\delta}{\delta t} \vert \Phi_{\textbf{R}}(t) \rangle_{\textbf{r}}$.
+\begin{wrapfigure}{r}{0.45 \textwidth}
+  \includegraphics[width=0.7\textwidth]{./img/nuclear_splitting_TDPES.png}
+  \caption{A demonstration of how the TDPES can cause the splitting of the nuclear wavepacket in non-adiabatic regions. The red line represents the TDPES and the blue is the nuclear density. Adapted from \cite{agostini_exact_2015} \label{fig:step_TDPES}}
+\end{wrapfigure}
+\\
+The effects of these latter terms (the TDPES, TDVP and the ENCO) have been investigated in multiple works \cite{agostini_semiclassical_2015, agostini_exact_2015, agostini_mixed_2013, abedi_dynamical_2013, Min2014Dec}. The TDPES and TDVP are both responsible for the evolution of the system
+\cite{agostini_semiclassical_2015}.  The TDPES provides exact classical forces on the nuclei. In fact, an alternative independent-trajectory semi-classical scheme has been investigated using these exact forces \cite{agostini_exact_2015}. This found the TDPES is responsible for the splitting of the nuclear wavepacket in regions of high non-adiabaticity by taking the shape of a step function. This is demonstrated in figure \ref{fig:step_TDPES}.
+\\\\
 
 
 \newpage

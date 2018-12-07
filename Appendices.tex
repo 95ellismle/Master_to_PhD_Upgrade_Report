@@ -3,9 +3,98 @@
 % The \appendix command resets the chapter counter, and changes the chapter numbering scheme to capital letters.
 %\chapter{Appendices}
 \appendix
-\chapter{An Appendix About Stuff}
-\label{appendixlabel1}
-(stuff)
+\chapter{Derivations}
+\label{ap:derivations}
+\section{Classical Limit of Nuclear TDSE \label{ap:polar_X}}
+The time-dependent nuclear Schr\"odinger equation:
+\[i \ \hbar \frac{\delta}{\delta t} \chi (\textbf{R}, t) = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}(\textbf{R}, t)]^2}{2 M_{\nu}} + \epsilon(\textbf{R}, t)\right) \chi (\textbf{R}, t)\]
+Substituting the polar form $\chi(\textbf{R}, t) = |\chi(\textbf{R}, t)|e^{\frac{i}{\hbar}S(\textbf{R}, t)}$
+\[i \ \hbar \frac{\delta}{\delta t} |\chi(\textbf{R}, t)|e^{\frac{i}{\hbar}S(\textbf{R}, t)} = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}(\textbf{R}, t)]^2}{2 M_{\nu}} + \epsilon(\textbf{R}, t)\right) |\chi(\textbf{R}, t)|e^{\frac{i}{\hbar}S(\textbf{R}, t)}\]
+We can remove the dependencies to neaten the equations up:
+\[i \ \hbar \frac{\delta}{\delta t} |\chi|e^{\frac{i}{\hbar}S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}]^2}{2 M_{\nu}} + \epsilon \right) |\chi |e^{\frac{i}{\hbar}S}\]
+Using chain rule to expand the time-derivative:
+\[i \ \hbar (|\dot{\chi}|e^{\frac{i}{\hbar}S} + |\chi|\dot{e^{\frac{i}{\hbar}S}}) = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}]^2}{2 M_{\nu}} + \epsilon \right) |\chi |e^{\frac{i}{\hbar}S}\]
+...
+\[i \ \hbar (|\dot{\chi}|e^{\frac{i}{\hbar}S} + |\chi|\frac{i}{\hbar}\dot{S} e^{\frac{i}{\hbar}S}) = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}]^2}{2 M_{\nu}} + \epsilon \right) |\chi |e^{\frac{i}{\hbar}S}\]
+Tidying up the LHS a bit and removing totally imaginary parts:
+\[\cancel{i \ \hbar |\dot{\chi}|e^{\frac{i}{\hbar}S}} - |\chi|\dot{S} e^{\frac{i}{\hbar}S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}]^2}{2 M_{\nu}} + \epsilon \right) |\chi |e^{\frac{i}{\hbar}S}\]
+Expanding out the squared bracket in the RHS:
+\[- |\chi| \dot{S} e^{\frac{i}{\hbar}S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{(-i \ \hbar\nabla_{\nu})^2 + \textbf{A}_{\nu}^2 - i \ \hbar (\nabla_{\nu}\textbf{A}_{\nu}) -i \ \hbar \textbf{A}_{\nu}\nabla_{\nu}) }{2 M_{\nu}} + \epsilon \right) |\chi |e^{\frac{i}{\hbar}S}\]
+Treating just the RHS (multiplying out the bracket):
+\begin{dmath*}
+  - |\chi| \dot{S} e^{\frac{i}{\hbar}S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{1}{2 M_{\nu}}\left(
+  \underbrace{(- \hbar^2 \nabla_{\nu}^2 |\chi |e^{\frac{i}{\hbar}S})}_{(1)}
+  + \underbrace{(\textbf{A}_{\nu}^2|\chi |e^{\frac{i}{\hbar}S})}_{(2)}
+  - \underbrace{(2 i \ \hbar \nabla_{\nu}\textbf{A}_{\nu} |\chi |e^{\frac{i}{\hbar}}S)}_{(3)}
+ \right) + \epsilon |\chi |e^{\frac{i}{\hbar}S} \right)
+\end{dmath*}
+
+\noindent Treating term 1 and 3 seperately:
+
+\subsection{Term 1 \label{ap:polar_X_4}}
+\[TERM \ 1 = -\hbar^2\nabla^2_{\nu}|\chi |e^{\frac{i}{\hbar}S}\]
+Taking a single derivative:
+\[TERM \ 1 = -\hbar^2\nabla_{\nu}\left[ \nabla_{\nu}(|\chi |)e^{\frac{i}{\hbar}S} + |\chi |\nabla_{\nu}(e^{\frac{i}{\hbar}S}) \right]\]
+Using chain rule:
+\[TERM \ 1 = -\hbar^2\nabla_{\nu}\left[ \nabla_{\nu}(|\chi |)e^{\frac{i}{\hbar}S} + |\chi|\frac{i}{\hbar}e^{\frac{i}{\hbar}S} \nabla_{\nu}(S)  \right]\]
+Taking the derivative again:
+\[TERM \ 1 = -\hbar^2\left[(\nabla_{\nu}^2|\chi |)e^{\frac{i}{\hbar}S} + (\nabla_{\nu}|\chi |)\frac{i}{\hbar}e^{\frac{i}{\hbar}S} (\nabla_{\nu} S) + (\nabla_{\nu}|\chi|)\frac{i}{\hbar}e^{\frac{i}{\hbar}S} (\nabla_{\nu} S) + |\chi|\frac{-1}{\hbar^2}e^{\frac{i}{\hbar}S} (\nabla_{\nu}^2 S) \right] \]
+Tidying up (taking the $e^{\frac{i}{\hbar}S}$ outside the bracket, gathering like terms and removing imaginary terms):
+\[TERM \ 1 = -\hbar^2\left[\nabla_{\nu}^2|\chi | + \cancel{\frac{2i}{\hbar} (\nabla_{\nu}|\chi |\nabla_{\nu} S)} - \frac{|\chi|}{\hbar^2}(\nabla_{\nu}^2 S) \right] e^{\frac{i}{\hbar}S} \]
+\[TERM \ 1 = -\hbar^2\left[\nabla_{\nu}^2|\chi | - \frac{|\chi|}{\hbar^2}  (\nabla_{\nu}^2 S)\right] e^{\frac{i}{\hbar}S}\]
+
+\subsection{Term 3 \label{ap:polar_X_2}}
+\[TERM \ 3  = 2 i \ \hbar \nabla_{\nu}\textbf{A}_{\nu} |\chi |e^{\frac{i}{\hbar}}S\]
+Using chain rule (and cancelling imaginary terms)
+\[TERM \ 3  = 2 i \ \hbar \left[ \cancel{\nabla_{\nu}\textbf{A}_{\nu} |\chi |e^{\frac{i}{\hbar}}S} + \cancel{\textbf{A}_{\nu} \nabla_{\nu}|\chi |e^{\frac{i}{\hbar}}S} + \textbf{A}_{\nu} |\chi |\nabla_{\nu}e^{\frac{i}{\hbar}}S\right]\]
+...
+\[TERM \ 3 = 2 i \ \hbar \textbf{A}_{\nu} |\chi |\frac{i}{\hbar}e^{\frac{i}{\hbar}S} \nabla_{\nu}S \]
+Tidying up:
+\[TERM \ 3 = -2 |\chi |e^{\frac{i}{\hbar}S} \textbf{A}_{\nu} \nabla_{\nu}S \]
+\subsection{Putting it all together \label{ap:Polar_X_final}}
+\begin{dmath*}
+  - |\chi| \dot{S} e^{\frac{i}{\hbar}S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{1}{2 M_{\nu}}\left(
+  -\hbar^2\left[\nabla_{\nu}^2|\chi | - \frac{|\chi|}{\hbar^2}  (\nabla_{\nu}^2 S)\right] e^{\frac{i}{\hbar}S}
+  + (\textbf{A}_{\nu}^2|\chi |e^{\frac{i}{\hbar}S})
+  + 2 |\chi |e^{\frac{i}{\hbar}S} \textbf{A}_{\nu} \nabla_{\nu}S
+ \right) + \epsilon |\chi |e^{\frac{i}{\hbar}S} \right)
+\end{dmath*}
+
+Dividing through by $-|\chi |e^{\frac{i}{\hbar}S}$:
+\begin{dmath*}
+  \dot{S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{1}{2 M_{\nu}}\left(
+  \hbar^2\left[\frac{\nabla_{\nu}^2|\chi |}{|\chi|} - \frac{1}{\hbar^2}  (\nabla_{\nu}^2 S)\right]
+  - \textbf{A}_{\nu}^2
+  - 2 \textbf{A}_{\nu} \nabla_{\nu}S
+ \right) - \epsilon \right)
+\end{dmath*}
+Tidying up:
+\begin{dmath*}
+  \dot{S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{1}{2 M_{\nu}}\left(
+  \hbar^2\frac{\nabla_{\nu}^2|\chi |}{|\chi|} - \left( \nabla_{\nu}^2 S
+  + \textbf{A}_{\nu}^2
+  + 2 \textbf{A}_{\nu} \nabla_{\nu}S\right)
+ \right) - \epsilon \right)
+\end{dmath*}
+Factorising and more tidying:
+\begin{dmath*}
+  \dot{S} = \left( \underbrace{\hbar^2 \sum_{\nu = 1}^{N_{n}} \frac{1}{2 M_{\nu}}
+  \frac{\nabla_{\nu}^2|\chi |}{|\chi|}}_{\text{Quantum Potential}}  - \epsilon - \sum_{\nu = 1}^{N_{n}} \frac{(\nabla_{\nu}S
+  + \textbf{A}_{\nu})^2}{2 M_{\nu}} \right)
+\end{dmath*}
+
+
+
+
+
+
+
+
+
+\section{Preservation of the Norm \label{ap:Norm_Pres}}
+
+
+
 
 \chapter{Another Appendix About Things}
 \label{appendixlabel2}
@@ -15,7 +104,7 @@
 \label{appendixlabel3}
 \textit{This is a description of the tools you used to make your thesis. It helps people make future documents, reminds you, and looks good.}
 
-\textit{(example)} This document was set in the Times Roman typeface using \LaTeX\ and Bib\TeX , composed with a text editor. 
+\textit{(example)} This document was set in the Times Roman typeface using \LaTeX\ and Bib\TeX , composed with Atom text editor.
  % description of document, e.g. type faces, TeX used, TeXmaker, packages and things used for figures. Like a computational details section.
 % e.g. http://tex.stackexchange.com/questions/63468/what-is-best-way-to-mention-that-a-document-has-been-typeset-with-tex#63503
 
