@@ -14,8 +14,6 @@ Typically charge carrier mobilities in `good' organic semiconductors (OSCs) fall
 \\\\
 Hopping theories assume the charge carrier is localised on one site and can hop from site to site in a series of discrete hops \cite{oberhofer_charge_2017}. There are various underlying mechanisms for this. For example, the presence of the charge carrier at a site can alter the nuclear geometry. The distorted nuclear geometry can make it harder for the charge carrier to move onto the next site, creating a metastable state and trapping the charge carrier. The deformation in the nuclear geometry is called a small polaron.
 \\\\
-{\LARGE Need a better connecting paragraph... Aim of the rest of this section is to lead on to the Born-Oppenhiemer approx}
-\\\\
 Polaronic hopping theories have been used to relative success and one of the key tools used in visualising this process (assuming harmonic response) are the Marcus Parabolas. These show how the free energy and reaction coordinates change after a charge transfer i.e. from initial to final diabatic states. The term `diabatic state' isn't well defined and can refer to different things in different formulations. In this work a diabatic state can be imagined as the charge carrier localised on a single molecule. This is discussed later in more detail in  \ref{sec:FOB-formalism}\\
 \\
 \begin{figure}[ht]
@@ -40,43 +38,9 @@ In fact for systems with couplings larger than $H_{ab} > \frac{3}{8} \lambda$ th
 In simulating processes involving electronic transfers a key approximation used in conventional molecular dynamics (MD) breaks down. That is the Born-Oppenheimer or adiabatic approximation \cite{john_c._tully_nonadiabatic_nodate}. This approximation relies on the fact that nuclei are more massive than electrons and are approximately stationary with respect to electron movement (need ref). This results in nuclear evolution that is governed by a single, adiabatic, potential energy surface. However, in many interesting processes, such as electron transfer, non-radiative decay and photochemical processes, electronic transitions between adiabatic potential energy surfaces occur (need ref). Simulating these processes requires non-adiabatic molecular dynamics (NAMD) techniques to be developed to correctly capture dynamical properties.
 \\\\
 There have been many techniques proposed for use in NAMD such as the quantum classical Louiville equation (need ref), multiple spawning (need ref) or nonadiabatic Bohmian dynamics (need ref) \footnote{See first Frederica paper} . However, two of the most popular are trajectory surface hopping (need ref) and mean-field approaches (need ref). This is probably due to their relative simplicity to implement (need ref), efficiency for large systems (need ref) and proven efficacy in a wide variety of situations (need ref). In all of these approaches the general aim is to treat as much of the system as possible with (computionally cheaper) classical mechanics. While handling all necessary parts with quantum mechanics \cite{Coker1995Jan}. In Surface Hopping, Ehrenfest and CTMQC one treats the nuclear subsystem classically and the electronic one quantum mechanically. The nuclei are propagated using a velocity verlet algorithm according to Newton's laws. The electrons are propagated using a fourth order Runge Kutta algorithm according to the time-dependent Schr\"odinger equation. This is normally expanded as a linear combination of adiabatic or diabatic states. The nuclei and electrons can also interact. Taking account of this interaction is where these different atomistic simulation techniques differ.
-\subsection{FOB Formalism \label{sec:FOB-formalism}}
-The effect of the nuclei on the electrons is normally handled via the Hamiltonian. This is dependent on nuclear positions and is in turn used in the Schr\"odinger equation to propagate the electron dynamics. Often the construction of the Hamiltonian is carried out using density function theory (DFT). However, for large, dynamic systems this becomes too computationally expensive and a different technique would have to be used. In this work I will rely on an Analytical Overlap Method (AOM) \cite{gajdos_ultrafast_2014} to calculate the off-diagonal elements of the Hamiltonian and the diagonal elements will be calculated via a forcefield.
-\subsubsection{AOM}
-AOM assumes that the off-diagonal elements of the Hamiltonian are proportional to the off-diagonal elements of the overlap matrix between 2 singly occupied molecular orbitals (SOMO). For $\pi$-conjugated systems,
+
 \subsection{Surface Hopping and Ehrenfest Dynamics}
-{\LARGE How surface hopping and ehrenfest alter the potential energy surface to affect the nuclear dynamics}
-\\\\
-\section{CTMQC \label{intro:CTMQC}}
-CTMQC comes from taking the semi-classical limit of an exact factorisation of the molecular wavefunction into its constituent electronic and nuclear components \cite{abedi_exact_2010}. Where the electronic component is parametrically dependent on the nuclear coordinates, $\textbf{R}$. This is shown below in eq \eqref{eq:exact_fact} where $\chi$ is the nuclear wavefunction and $\Phi$ is the electronic one.
-\begin{equation}
- \Psi(\textbf{R}, \textbf{r}, t) = \Phi_{\textbf{R}}(\textbf{r}, t) \chi(\textbf{R}, t)
- \label{eq:exact_fact}
- \end{equation}
-In the above equation (and throughout this report) I will denote nuclear coordinates and electronic coordinates $R$ and $r$ respectively. The nuclear and electronic wavefunctions then obey separate, but coupled, time-dependent schr\"odinger equations for spatial and temporal evolution. This representation has proven to be useful in furthering understanding through exact solutions of small toy-model systems (need ref \footnote{see deconstruction paper}). However, in this report I will be focussing on the semi-classical limit of these equations (CTMQC) and give some early results of a combination of this and the AOM method explained previously in section \ref{sec:FOB-formalism}.
-The equations for the evolution of the electronic and nuclear wavefunctions in the exact factorisation \cite{abedi_exact_2010} are given below:
-\begin{align}
-  i\hbar \frac{\delta}{\delta t} \Phi_{\textbf{R}}(\textbf{r}, t) &= \left( \hat{H}_{BO} + \hat{U}_{en}\left[ \Phi_{\textbf{R}}, \chi\right] - \epsilon(\textbf{R}, t) \right) \Phi_{\textbf{R}} (\textbf{r}, t)
-  \label{eq:electronic_exact}
-\\
-i\hbar \frac{\delta}{\delta t} \chi (\textbf{R}, t) &= \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i\hbar\nabla_{\nu} + \textbf{A}_{\nu}(\textbf{R}, t)]^2}{2 M_{\nu}} + \epsilon(\textbf{R}, t)\right) \chi (\textbf{R}, t)
-  \label{eq:nuclear_exact}
-\end{align}
-Where $\hat{H}_{BO}$ is the Born-Oppenheimer Hamiltonian, that is $\hat{T}_{e} + \hat{W}_{ee} + \hat{W}_{nn} + \hat{V}_{en}$. Where $\hat{T}_{e}$ is the electronic kinetic energy operator, $\hat{W}_{ee/nn}$ is the electron-electron/nuclei-nuclei interation and $V_{en}$ is the electronic-nuclear potential.
-\\\\
-The $\hat{U}_{en}$ is an electronic-nuclear coupling operator (ENCO). This is defined as $  \hat{U}_{en}[\Phi_{\textbf{R}}, \chi] = \sum_{\nu=1}^{N_{nuc}} \frac{1}{M_{\nu}} \left[ \frac{\left[-i \hbar \nabla_{\nu} - \textbf{A}_{\nu}(\textbf{R}, t) \right]^2}{2} + \left( \left. \left. \frac{-i\hbar \nabla_{\nu} \chi}{\chi} + \textbf{A}_{\nu}(\textbf{R, t})\right)\right( -i\hbar\nabla_{\nu} - \textbf{A}_{\nu}(\textbf{R}, t)\right) \right]   $.
-Where the $\textbf{A}_{\nu}$ is a time-dependent vector potential (TDVP), given by $\left\langle \Phi_{\textbf{R}}(t) \right\vert \left. - i \hbar \nabla_{\nu} \Phi_{\textbf{R}} \right\rangle_{\textbf{r}}$ and $M_{\nu}$ is the mass of nuclei $\nu$.
-Finally $\epsilon(\textbf{R}, t)$ is a time-dependent scalar potential energy surface (TDPES), given by $\langle \Phi_{\textbf{R}}(t) \vert \hat{H}_{BO} + \hat{U}_{en}^{coup} - i\hbar \frac{\delta}{\delta t} \vert \Phi_{\textbf{R}}(t) \rangle_{\textbf{r}}$.
-\begin{wrapfigure}{r}{0.45 \textwidth}
-  \includegraphics[width=0.7\textwidth]{./img/nuclear_splitting_TDPES.png}
-  \caption{A demonstration of how the TDPES can cause the splitting of the nuclear wavepacket in non-adiabatic regions. The red line represents the TDPES and the blue is the nuclear density. Adapted from \cite{agostini_exact_2015} \label{fig:step_TDPES}}
-\end{wrapfigure}
-\\
-The effects of these latter terms (the TDPES, TDVP and the ENCO) have been investigated in multiple works \cite{agostini_semiclassical_2015, agostini_exact_2015, agostini_mixed_2013, abedi_dynamical_2013, Min2014Dec}. The TDPES and TDVP are both responsible for the evolution of the system
-\cite{agostini_semiclassical_2015}.  The TDPES provides exact classical forces on the nuclei. In fact, an alternative independent-trajectory semi-classical scheme has been investigated using these exact forces \cite{agostini_exact_2015}. This found the TDPES is responsible for the splitting of the nuclear wavepacket in regions of high non-adiabaticity by taking the shape of a step function. This is demonstrated in figure \ref{fig:step_TDPES}.
-\\\\
-
-
+{\LARGE How Surface Hopping and Ehrenfest alter the potential energy surface to affect the nuclear dynamics -Introduce the terms non-adiabatic coupling vectors (NACV) and NACEs also mention that what trajectory based methods are.}
 \newpage
 
 
