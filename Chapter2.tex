@@ -1,3 +1,4 @@
+
 \chapter{FOB Formalism}
 \label{chap:FOB}
 The effect of the nuclei on the electrons is normally handled via the Hamiltonian. This is dependent on nuclear positions and is in turn used in the Schr\"odinger equation to propagate the electron dynamics. Often the construction of the Hamiltonian is carried out using density function theory (DFT). However, for large, dynamic systems this becomes too computationally expensive and a different technique would have to be used. In this work I will rely on an Analytical Overlap Method (AOM) \cite{gajdos_ultrafast_2014} to calculate the off-diagonal elements of the Hamiltonian. The diagonal elements will be calculated via a forcefield. This also outlines a quick method of calculating the strength of the non-adiabatic coupling between electronic states.
@@ -38,4 +39,14 @@ C_1 \\
 \vdots \\
 C_n
 \end{array}\right)$
-The unitary transformation matrix is given as the overlap between diabatic and adiabatic states -$U_{ln} = \langle \phi_{l} | \psi_{n} \rangle$- and is a square matrix of size $N_{states} ^2$. 
+The unitary transformation matrix is given as the overlap between diabatic and adiabatic states, $U_{ln} = \langle \phi_{l} | \psi_{n} \rangle$, and is a square matrix of size $N_{states} ^2$. The blackboard font is used when referring to matrices. The fact that this matrix is unitary means transforming from the diabatic to adiabatic is no more computationally expensive. The transformation can be obtained by pre-multiplying both sides of eq \eqref{eq:ad_to_di} by $\mathbb{U}^{\dagger}$.
+\\\\
+To trasform from the non-orthogonal to orthogonal basis we need a new matrix. This is given by:
+\begin{equation}
+  \vec{\phi} = \mathbb{T} \vec{\varphi}
+  \label{eq:orth_to_nonorth}
+\end{equation}
+Here I have expressed this in terms of the basis functions $\phi$ and $\varphi$ (dropping the arguments) as this transformation isn't needed in the propagation equations. However, it is needed when transforming the other terms such as the non-orthogonal diabatic Hamiltonian, $H^{'}$, and non-adiabatic coupling terms to the orthogonal diabatic Hamiltonian $H$. For example, the orthogonal diabatic Hamiltonian is calculated as $H_{kl} = \left[\mathbb{T}^{-1} \mathbb{H}^{'} \mathbb{T} \right]_{kl}$. This matrix is equal to the inverse square of the overlap between SOMOs i.e. $T_{ml} = [\mathbb{S}^{-\frac{1}{2}}]_{ml}$.
+\\\\
+Replacing the full charge transfer determinant with parametrised singly occupied molecular orbitals (SOMOs) makes the calculation of the relevant terms in the propagation of the system very efficient. The approximation has been scrutinised before in the group
+\cite{giannini_crossover_2018, carof_detailed_2017, gajdos_ultrafast_2014, Gajdos2013Mar, spencer_confronting_2016, spencer_fob-sh:_2016} and its first implementation within the surface hopping framework has been shown to reproduce known phenomena such as the crossover from band-like to hopping-like transport \cite{giannini_crossover_2018}. In this way the interaction of the electrons on the nuclei is accounted for, as the overlap between SOMOs (and therefore the coupling) depends on the distance between molecules i.e. nuclear geometry.
