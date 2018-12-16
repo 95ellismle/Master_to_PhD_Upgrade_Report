@@ -51,12 +51,12 @@ It has been found that the first term is negligible compared to the second \cite
   \label{eq:hist_force}
 \end{equation}
 Where $\epsilon_{l}^{(I)}$ is the energy of the l$^{th}$ adiabatic potential energy surface for trajectory I, $C_{l}^{(I)}$ is the adiabatic expansion coefficient for state l and trajectory I. The $\textbf{f}_{l}^{(I)}$ is the time-integrated adiabatic force.
-\subsection{Gaussians as Nuclear Wavepackets}
+\subsection{Gaussian Nuclear Wavepackets}
 In order to calculate the quantum momentum -the new term in CTMQC. Knowledge of the nuclear distribution is needed. To this end the nuclear wavepacket is assumed to take the shape of a Gaussian. This is centred on the atomic coordinate with a width $\sigma$. In this work I have used a constant width throughout, with plans to implement dynamic Gaussian width calculations later. However, the nuclei are still propagated classically, the width parameter is only used in the calculation of the quantum momentum.
 \subsection{Seperating the Effects of Decoherence and NACVs}
 So as to not introduce any population transfer (due to the quantum momentum) when the NACV is zero a fifth approximation has been introduced. Namely the quantum momentum depends on pairs of states -l,k. This enables the seperation of the `competing' effects of the NACV and the Quantum Momentum.
 \section{The CTMQC equations}
-\subsection{Adiabatic Basis}
+\subsection{Adiabatic Basis \label{sec:ad_eqns}}
 The equations for the propagation of the classical nuclei and the expansion coefficients in the CTMQC framework in the adiabatic basis are given below:
 \begin{dmath}
   \dot{\textbf{P}}_{\nu}^{(I)} =
@@ -91,18 +91,54 @@ Therefore, the quantum momentum term can be seen to only kick in when there is a
 
 \subsection{Diabatic Basis}
 The equations above \eqref{eq:nuc_adiab} \& \eqref{eq:elec_adiab} are both in the adiabatic basis. However, to make use of the FOB-formalism detailed in section \ref{chap:FOB} already implemented in the CP2K software package (need ref) these need to be transformed to the orthogonal diabatic basis, $\phi$. After applying the transformation matrix $\mathbb{U}$ and some algebra the equations in the diabatic basis can be written as:
-\begin{dmath*}
+\begin{dmath}
 { F_{v}^{(I)}(t)} =
-\overbrace{ -\sum_{l,k} u_{l}^{(I) *} u_{k}^{(I)} \nabla_{v} H_{lk}^{(I)}}^{\text{Ehrenfest}}
+\overbrace{ -\sum_{l,k} u_{l}^{(I) *} u_{k}^{(I)} \nabla_{v} H_{lk}^{(I)} - \sum_{l,k,a} d_{la}^{(I)}H_{ak}^{(I)} - d_{ak}^{(I)}H_{la}^{(I)}}^{\text{Ehrenfest}}
 \\
  - \underbrace{2 \sum_{l} |C_{l}^{(I)}|^2 \sum_{n} \left( \sum^{N}_{\nu'} \frac{\mathcal{Q}^{(I)}_{ln,v'}(t)}{\hbar M_{v'}} \cdot \textbf{f}^{(I)}_{l,v'}\right)\left[  |C_{n}^{(I)}|^{2} \textbf{f}^{(I)}_{n,v} - \textbf{f}^{(I)}_{l,v} \right]}_{\text{Quantum Momentum}}
-\end{dmath*}
+ \label{eq:diab_force}
+\end{dmath}
 
-\begin{align*}
+\begin{align}
 \dot{u}_k^{(I)} =
-&\overbrace{ - \frac{i}{\hbar}\sum\limits_{l} u_l^{(I)} \left(H_{kl}^{(I)} + i \hbar d_{kl}^{(I)} \right)}^{\text{Ehrenfest}} \\
-& + \underbrace{\sum_{s} U_{ks} \sum_{\nu = 1}^{N_n}\sum_{n}^{N_{states}}  \frac{\mathcal{Q}_{sn,\nu}^{(I)}}{\hbar M_\nu}\cdot \left[\vert C_n^{(I)} \vert^2 \mathbf{f}_{n, \nu}^{(I)}- \mathbf{f}^{(I)}_{s, \nu}\right] \sum_{l} U^{*}_{sl} u^{(I)}_{l}}_{\text{Quantum Momentum}}
-\end{align*}
+&\overbrace{ - \frac{i}{\hbar}\sum\limits_{l} u_l^{(I)} \left(H_{kl}^{(I)} + i \hbar d_{kl}^{(I)} \right) }^{\text{Ehrenfest}} \\
+& + \underbrace{\sum_{s} U_{ks} \sum_{\nu = 1}^{N_n} \sum_n   \frac{\mathcal{Q}_{sn,\nu}^{(I)}}{\hbar M_\nu}\cdot \left[ \mathbf{f}_{n, \nu}^{(I)}- \mathbf{f}^{(I)}_{s, \nu}\right]\vert C_n^{(I)} \vert^2 \sum_{l} U^{*}_{sl} u^{(I)}_{l}}_{\text{Quantum Momentum}}
+\label{eq:diab_elec}
+\end{align}
+Where $u_l^{(I)}$ represents the diabatic expansion coefficient for (orthogonal) diabatic state l on trajectory I. $H_{kl}^{(I)} = \langle \phi_{k}^{(I)} | H^{(I)} | \phi_{l}^{(I)} \rangle$ is the diabatic Hamiltonian. $d_{kl} = \langle \phi_{k}^{(I)} | \dot{\phi_{l}^{(I)}} \rangle$ is the diabatic non-adiabatic coupling element (NACE). $U_{ks} = \langle \phi_{k} | \psi_{s} \rangle $
+is the adiabatic-diabatic transformation matrix. The other terms have been previously defined (see section
+ \label{sec:ad_eqns}).
+ \\\\
+ The 2 expressions can again be decomposed into a quantum momentum part and an Ehrenfest part. In the force expression \eqref{eq:diab_force} the Ehrenfest part comprises 2 terms. In tests I have found the first term  contributes significantly more to the overall force than the second `commutator' term. This means that the second term, can be neglected in most situations. The quantum momentum term in the force expression is expressed in the adiabatic basis. This is because it is basis independent and numerically transforming it with transformation matrices would result in unnecessary computation. The quantum momentum part of the electronic equation \eqref{eq:diab_elec} is largely unchanged compared to the adiabatic one \eqref{eq:elec_adiab} and an on-the-fly transformation from adiabatic to diabatic representations is required during propagation.
+ \\\\
+ The diabatic hamiltonian, as opposed to the adiabatic one, now contains non-zero off-diagonal elements. This is the primary term responsible for population transfer when in pure adiabatic states. The diabatic NACE has a much smaller effect.
+ \section{Calculating the Quantum Momentum}
+ The technique for calculating the quantum momentum term is outlined in detail in the SI of \cite{min_ab_2017}. The original equations given in \cite{agostini_quantum-classical_2016} present a quantum momentum term without state indices (l,k). This, due to approximations made in the derivation of CTMQC, results in population transfer even when the non-adiabatic couplings between states are zero. Therefore Agostini et al has enforced this with the pair-wise state dependence of the quantum momentum.
+ \\\\
+The quantum momentum is defined as:
+\begin{equation}
+  \mathcal{Q}_{\nu}{(I)} = \frac{-\hbar \nabla_{\nu} |\chi^{(I)}|}{|\chi^{(I)}|} \frac{-\hbar \nabla_{\nu} |\chi^{(I)}|^2}{2|\chi^{(I)}|^2}
+  \label{eq:QM_def}
+\end{equation}
+In order to reconstruct the nuclear density Gaussian distributions can be used. This results in a linear expression for the quantum momentum.
+The full details of the derivation are given in the supplementary information of \cite{min_ab_2017}. The resulting linear expression for the quantum momentum is given below:
+\begin{equation}
+  \mathcal{Q}_{lk, \nu}^{(I)} = \alpha_{\nu}^{(I)} \textbf{R}_{\nu}^{(I)} - \textbf{R}_{lk, \nu}
+  \label{eq:QM_lin}
+\end{equation}
+Where $\textbf{R}_{\nu}^{(I)}$ are the nuclear coordinates on trajectory I on atom $\nu$. The $\alpha_{\nu}{^(I)}$ term is a weighted average over trajectories of the product of the gaussian's assigned to each atomic coordinate, i.e:
+\begin{equation}
+  \alpha_{\nu}^{(I)} = \sum_{J}^{N_{tr}} \frac{\hbar \prod_{\nu'} g_{\sigma_{\nu'}^{(J)}(t)}\left(\textbf{R}_{\nu'}^{(I)}(t) - \textbf{R}_{\nu'}^{(J)}(t)\right)}   {2 \sigma_{\nu}^{(J)}(t)^2\sum_{K}^{N_{tr}}\prod_{\nu'} g_{\sigma_{\nu'}^{(K)}(t)}\left(\textbf{R}_{\nu'}^{(I)}(t) - \textbf{R}_{\nu'}^{K)}(t)\right)}
+  \label{eq:alpha}
+\end{equation}
+Where $\sigma_{\nu'}^{(J)}(t)$ is a width parameter for the width of the gaussian centered at atomic coordinates. Along with the $\textbf{R}_{lk, \nu}$ term the $\alpha_{\nu}^{(I)}$ performs the job of coupling the trajectories together. The $\textbf{R}_{lk, \nu}$ term also given in the SI of \cite{min_ab_2017} is defined for each cartesian dimension as:
+\begin{equation}
+  R_{lk, \nu} = \sum_{I}^{N_{tr}} R_{\nu}^{(I)}(t) \alpha_{\nu}^{(I)}(t) \frac{|C_{k}^{(I)}(t)|^2 |C_{l}^{(I)}(t)|^2 \left( f_{k, \nu}^{(I)}(t) - f_{l, \nu}^{(I)}(t) \right)}{\sum_{J} |C_{k}^{(J)}(t)|^2 |C_{l}^{(J)}(t)|^2 \left( f_{k, \nu}^{(J)}(t) - f_{l, \nu}^{(J)}(t) \right)}
+  \label{eq:Rlk}
+\end{equation}
+Where the bold notation for vectors has been replaced by normal font indicating that this applies to each cartesian dimension independently. Further, in this expression $R_{lk, \nu}$ is anti-symmetric, $R_{lk} = R_{kl}$ meaning that $Q_{lk} = Q_{kl}$. At first sight the $R_{lk}$ term seems to be another weighted average. However, this isn't quite the case as the denominator can have negative terms. This causes equation \eqref{eq:Rlk} to be very sensitive to errors in the calculation of the denominator of this fraction. Any inaccuracies can lead to the denominator approaching zero faster than the numerator causing large spikes in the quantum momentum term.
 
+\section{Testing my implementation}
+I have implemented a serial version of this algorithm in the CP2K software package (need ref).
 
-{\Large Need to write out the equations in the adiabatic basis and the diabatic basis (can give derivation in the appendix along with conservation of norm). Need to explain the Rlk thing and how to calculate the quantum momentum etc... }
+\newpage
