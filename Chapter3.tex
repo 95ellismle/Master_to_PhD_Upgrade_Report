@@ -75,22 +75,23 @@ The equations for the propagation of the classical nuclei and the expansion coef
   \dot{C}_{l}^{(I)} =
   \overbrace{
     -\frac{i}{\hbar} \epsilon_l^{(I)} C_{l}
-    - \sum_k C_k^{(I)} \sum_{\nu=1}^{N_n} \frac{\textbf{P}_{\nu}}{M_{\nu}} \cdot \textbf{d}_{lk, \nu}^{ad, (I)}
-  }^{\text{Ehrenfest}} -
+    - \sum_k C_k^{(I)} d_{lk}^{ad \ (I)}
+  }^{\text{Ehrenfest}}
   \\
   \underbrace{
     - \sum_{\nu=1}^{N_n}\sum_{k} \frac{\mathcal{Q}_{lk, \nu}^{(I)}}{\hbar M_\nu} \cdot \left[ \textbf{f}_{k,\nu}^{(I)} - \textbf{f}_{l,\nu}^{(I)} \right] |C_{k}^{(I)}|^2 C_{l}^{(I)}
   }_{\text{Quantum Momentum}}
   \label{eq:elec_adiab}
 \end{dmath}
-Where the $\epsilon_k$ term is the potential energy on the k$^{th}$ potential energy surface. $C_l$ is the adiabatic expansion coefficient corresponding to the l$^{th}$ state. The sum over k and l indicates a sum over all states, the (I) superscript is a replica index and the $\nu$ is an atom index. $M_{\nu}$ is the nuclear mass and $\textbf{d}_{lk, \nu}{^(I)}$ represents the non-adiabatic coupling vector between adiabatic states l and k. The 2 new terms in this scheme not seen in other one are the $\mathcal{Q}_{lk, \nu}^{(I)}$ and the $\textbf{f}_{k, \nu}^{(I)}$. These are the quantum momentum and the history dependent adiabatic force. The history dependent force in defined in equation \eqref{eq:hist_force} this keeps a record of the previous forces in the system. The quantum momentum term couples the trajectories together (making this a coupled-trajectory scheme). Together the history dependent force and quantum momentum are responsible for the decoherence in the `Quantum Momentum' parts of the
+Where the $\epsilon_k$ term is the potential energy on the k$^{th}$ potential energy surface. $C_l$ is the adiabatic expansion coefficient corresponding to the l$^{th}$ state. The sum over k and l indicates a sum over all states, the (I) superscript is a replica index and the $\nu$ is an atom index. $M_{\nu}$ is the nuclear mass and $d_{lk}{^(I)}$ represents the non-adiabatic coupling element (in the adiabtic basis) between adiabatic states l and k, $\langle \psi_{l} \vert \frac{d}{dt}\psi_{k} \rangle$.
+The 2 new terms in this scheme not seen in other one are the $\mathcal{Q}_{lk, \nu}^{(I)}$ and the $\textbf{f}_{k, \nu}^{(I)}$. These are the quantum momentum and the history dependent adiabatic force. The history dependent force in defined in equation \eqref{eq:hist_force} this keeps a record of the previous forces in the system. The quantum momentum term couples the trajectories together (making this a coupled-trajectory scheme). Together the history dependent force and quantum momentum are responsible for the decoherence in the `Quantum Momentum' parts of the
 above equations \cite{gossel_coupled-trajectory_2018}. Notably, although these equations have been derived from the exact factorisation equations separately from Ehrenfest they do contain exactly the Ehrenfest equations within them (marked `Ehrenfest'). This scheme can therefore be seen as an Ehrenfest scheme with a correction that captures branching of the nuclear wavefunction and decoherence within it.
 \\\\
 We can also see in equation \eqref{eq:elec_adiab} if we are in a pure adiabatic state i.e. all population on a single adiabatic state, there is no contribution from the quantum momentum part of the equations. In this scenario the evolution equations become simply Ehrenfest equations. For example, if we only have 1 state in the system with non-zero adiabatic population then the term $|C_{k}^{(I)}|^2 C_{l}$ is only non-zero when $l = k$. However, when $l = k$, the term $\left[ \textbf{f}_{k,\nu}^{(I)} - \textbf{f}_{l,\nu}^{(I)} \right]$ is zero as $\textbf{f}_{k,\nu}^{(I)} = \textbf{f}_{l,\nu}^{(I)}$.
 Therefore, the quantum momentum term can be seen to only kick in when there is a mixing of adiabatic states. In the adiabatic formulation of these equations it is the adiabatic NACV $\textbf{d}_{lk, \nu}^{ad, (I)}$ that is responsible for the initial mixing of the populations from pure adiabatic states.
 
 \subsection{Diabatic Basis}
-The equations above \eqref{eq:nuc_adiab} \& \eqref{eq:elec_adiab} are both in the adiabatic basis. However, to make use of the FOB-formalism detailed in section \ref{chap:FOB} already implemented in the CP2K software package (need ref) these need to be transformed to the orthogonal diabatic basis, $\phi$. After applying the transformation matrix $\mathbb{U}$ and some algebra the equations in the diabatic basis can be written as:
+The equations above \eqref{eq:nuc_adiab} \& \eqref{eq:elec_adiab} are both in the adiabatic basis. However, to make use of the FOB-formalism detailed in section \ref{chap:FOB} already implemented in the CP2K software package \cite{CP2K} these need to be transformed to the orthogonal diabatic basis, $\phi$. After applying the transformation matrix $\mathbb{U}$ and some algebra the equations in the diabatic basis can be written as:
 \begin{dmath}
 { F_{v}^{(I)}(t)} =
 \overbrace{ -\sum_{l,k} u_{l}^{(I) *} u_{k}^{(I)} \nabla_{v} H_{lk}^{(I)} - \sum_{l,k,a} d_{la}^{(I)}H_{ak}^{(I)} - d_{ak}^{(I)}H_{la}^{(I)}}^{\text{Ehrenfest}}
@@ -139,6 +140,49 @@ Where $\sigma_{\nu'}^{(J)}(t)$ is a width parameter for the width of the gaussia
 Where the bold notation for vectors has been replaced by normal font indicating that this applies to each cartesian dimension independently. Further, in this expression $R_{lk, \nu}$ is anti-symmetric, $R_{lk} = R_{kl}$ meaning that $Q_{lk} = Q_{kl}$. At first sight the $R_{lk}$ term seems to be another weighted average. However, this isn't quite the case as the denominator can have negative terms. This causes equation \eqref{eq:Rlk} to be very sensitive to errors in the calculation of the denominator of this fraction. Any inaccuracies can lead to the denominator approaching zero faster than the numerator causing large spikes in the quantum momentum term.
 
 \section{Testing my implementation}
-I have implemented a serial version of this algorithm in the CP2K software package (need ref).
+I have implemented a serial version of this algorithm in the CP2K software package \cite{CP2K}. In this section I will outline some key physical tests I have performed on both the Ehrenfest part of the equations and the full CTMQC equations.
+\subsection{Rabi Oscillation}
+Rabi Oscillation can be shown to occur in systems that have fixed nuclear geometries (see section \ref{ap:Rabi}). This can be used to check the electronic propagation, which is carried out using a fourth order Runge-Kutta algorithm. In this test I propagated the system with the Ehrenfest method and set velocities to zero, thus freezing the positions of the nuclei. I compared this to this to the analytically calculated coefficients using python and the Rabi Oscillation formula. The results are shown below in figure \ref{fig:Rabi}.
+\begin{figure}[H]
+  \includegraphics[height=0.5\textheight]{./img/Rabi_Oscillation_trimer.png}
+  \caption{\label{fig:Rabi}Rabi Oscillations occuring in a trimer of Ethylene-like molecules. Dots indicate the coefficient calculated by python according to the Rabi formula. Lines indicate the CP2K output. The different colours represent different diabatic states.}
+\end{figure}
+\noindent We can see in figure \ref{fig:Rabi} CP2K gives the same output as the analytic result, meaning the Runge-Kutta method is working. The cyan line shows us the norm is preserved in this system.
+\\
+\subsection{Energy Conservation}
+Ehrenfest can be shown to conserve the potential energy + total kinetic energy \cite{john_c._tully_nonadiabatic_1998}. The potential energy is given by the effective potential (see section \ref{sec:Ehren_SH}) and the total kinetic energy is given as a sum of the kinetic energy over all atoms.
+\\\\
+...
+\\\\
+(I have a graph from last year. However, I thought it would be a good idea to prepare a new one with the current code as well to give that a thorough test.)
+\\\\
+I have not yet tested the energy conservation in CTMQC, this is still a work in progress.
+
+\subsection{Norm Conservation}
+The norm of the coefficients should be conserved when propagating the equations. To not do so would mean that the total number of charge carrier is changing, i.e. electrons/holes being destroyed or created. Both the CTMQC and Ehrenfest electronic equations can be shown to conserve the norm (see appendix \ref{ap:Norm_Pres}). This is very well conserved in Ehrenfest, with norm drifts (using a nuclear time-step of 0.1fs) of the order $10^{-10}$ ps$^{-1}$. However, in CTMQC the story is slightly different.
+\\\\
+The quantum momentum appears in both the nuclear force equation and the electronic equation. However, its current formulation using Gaussian distributions to model the nuclear density results in equation \eqref{eq:QM_lin}. That is $Q_{lk,\nu}^{(I)} = \alpha_{\nu}^{(I)}\textbf{R}^{(I)}_\nu - \textbf{R}^{(I)}_{lk, \nu}$. Where the $\textbf{R}^{(I)}_{lk, \nu}$ term is calculated via equation \eqref{eq:Rlk}. This is given again below in a condensed form:
+\[\textbf{R}_{lk, \nu} = \sum_{I}^{N_{tr}} R_{\nu}^{(I)}(t) \alpha_{\nu}^{(I)}(t) \frac{\textbf{Y}^{(I)}_{lk, \nu}(t)}{\sum_{J} \textbf{Y}^{(I)}_{lk, \nu}(t)} \]
+\\
+Where $\textbf{Y}^{(I)}_{lk, \nu} = |C_{k}^{(J)}(t)|^2 |C_{l}^{(J)}(t)|^2 \left( \textbf{f}_{k, \nu}^{(J)}(t) - \textbf{f}_{l, \nu}^{(J)}(t) \right)$.
+\\\\
+However, the $\textbf{Y}^{(I)}_{lk, \nu}$ can be both negative and positive so after summing $\textbf{Y}^{(I)}_{lk, \nu}$ over all replicas the denominator can approach zero. Any small inaccuracies in the propagation will result in large spikes in this term, thus causing bad norm conservation and unphysical data. A demonstration of this can be seen below.
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{./img/fl_fk_causing_spikes.png}
+  \caption{\label{fig:flk_causing_spikes} A time-series plot of the denominator in the $\textbf{R}_{lk,\nu}$ equation (bottom graph) and the quantum momentum term between states 1 \& 2 on atom 1 for replica 1 (top graph). Each colour represents a different cartesian component.}
+\end{figure}
+\noindent In figure \ref{fig:flk_causing_spikes} when the bottom part of the fraction approaches zero there is a spike in the quantum momentum. This spike in the quantum momentum then affects the nuclear and electronic propagation. One way this manifests itself is in bad norm conservation. This is shown in figure below (\ref{fig:norm_spikes})
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{./img/norm_qm_spikes.png}
+  \caption{\label{fig:norm_spikes} A time-series plot of the modulus of the quantum momentum between states 1 \& 2 on atom 1 for replica 1 (bottom graph) and the norm of the diabatic expansion coefficients (top graph). }
+\end{figure}
+\noindent In an attempt to counter this problem a smoothing function has been implemented in the calculation of the $R_{lk, \nu}$ term. This takes the shape of a tanh$^2$ function, that is:
+\begin{equation}
+  \textbf{R}_{lk, \nu} = \sum_{I}^{N_{tr}} R_{\nu}^{(I)}(t) \alpha_{\nu}^{(I)}(t) \tanh\left(\frac{\sum_{J} \textbf{Y}^{(I)}_{lk, \nu}(t)}{W}\right)^2 \frac{\textbf{Y}^{(I)}_{lk, \nu}(t)}{\sum_{J} \textbf{Y}^{(I)}_{lk, \nu}(t)}
+  \label{eq:tanh_smooth}
+\end{equation}
+
+
+
 
 \newpage

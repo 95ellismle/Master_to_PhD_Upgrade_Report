@@ -84,14 +84,45 @@
 % \end{dmath*}
 
 \section{Preservation of the Norm \label{ap:Norm_Pres}}
+\subsection{Ehrenfest \label{ap:Norm_Pres_Eh}}
+The statement of the conservation of norm is:
+\[ \sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l}^{(I)} \vert^2 = 0\]
+Using chain rule (and assuming this hold for each replica) we can write this as:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = \left(\frac{d}{dt} C_{l}^{*}\right)C_{l} + C_{l}^*\left(\frac{d}{dt} C_{l}\right)\]
+If we write, $C_l = (a + bi)$ and $C_l^* = (a - bi)$ we can see the following relation holds:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = \sum_{l}^{N_{states}} \left(\frac{d}{dt} C_{l}^{*}\right)C_{l} + C_{l}^*\left(\frac{d}{dt} C_{l}\right) = \sum_{l}^{N_{states}} 2\mathcal{R} \left[ C_{l}^*\left(\frac{d}{dt} C_{l}\right) \right]\]
+We have an expression for the time-derivative of the adiabatic expansion coefficient, under Ehrenfest (equation \eqref{eq:adiab_elec}). Inserting this above we get:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = \sum_{l}^{N_{states}}2 \mathcal{R}\left[ C_{l}^* \frac{-i}{\hbar} C_{l} \epsilon_{l} - \sum_{k} C_{l}^{*} C_{k} d_{lk}^{ad} \right]\]
+The first term is imaginary so we can remove it, as we're only interested in the real components:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = - 2 \sum_{l,k}^{N_{states}} \mathcal{R}\left[  C_{l}^{*} C_{k} d_{lk}^{ad} \right]\]
+The next term is exactly zero due to the anti-symmetry of the NACE that is the equation above can be written as:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = -2 \sum_{k=2}^{N_{states}} \sum_{l<k} \mathcal{R}\left[(C_{l}^{*}C_{k} - C_{k}^{*}C_{l})d_{lk}\right] = 0\]
+
+\subsection{CTMQC \label{ap:CTMQC}}
+The proof of conservation of the norm in CTMQC is similar to Ehrnfest. Again we write:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = \sum_{l}^{N_{states}} 2\mathcal{R} \left[ C_{l}^*\left(\frac{d}{dt} C_{l}\right) \right]\]
+This time, the propagtion equation is slightly different:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = \sum_{l}^{N_{states}}2 \mathcal{R}\left[ C_{l}^* \frac{-i}{\hbar} C_{l} \epsilon_{l} - \sum_{k} C_{l}^{*} C_{k} d_{lk}^{ad} - \sum_{\nu=1}^{N_n}\sum_{k}\frac{\mathcal{Q}_{lk,\nu}^{(I)}}{\hbar M_{\nu}}\cdot \left(\textbf{f}_{k,\nu}^{(I)} - \textbf{f}_{l,\nu}^{(I)}\right)|C_k|^2 C_l^{(I)}C_l^{* \ (I)} \right]\]
+
+We have seen that the Ehrenfest part of the above equation conserves the norm, so we can remove that. we can also combine the 2 $C_l$ terms on the end:
+
+\[ \sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = -2 \sum_{l,k}^{N_{states}} \mathcal{R}\left[ \sum_{\nu=1}^{N_n}\frac{\mathcal{Q}_{lk,\nu}^{(I)}}{\hbar M_{\nu}}\cdot \left(\textbf{f}_{k,\nu}^{(I)} - \textbf{f}_{l,\nu}^{(I)}\right)|C_k|^2 |C_l^{(I)}|^2 \right] \]
+
+Because $\mathcal{Q}_{lk,\nu}^{(I)} = \mathcal{Q}_{kl,\nu}^{(I)}$ (and the diagonal is undefined) we can re-write the above equation as:
+\[ \sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = -2 \sum_{l}^{N_{states}} \sum_{k<l} \mathcal{R}\left[ \sum_{\nu=1}^{N_n}\frac{\mathcal{Q}_{lk,\nu}^{(I)}}{\hbar M_{\nu}}\cdot \left[ \left(\textbf{f}_{k,\nu}^{(I)} - \textbf{f}_{l,\nu}^{(I)}\right) + \left(\textbf{f}_{l,\nu}^{(I)} - \textbf{f}_{k,\nu}^{(I)}\right)\right]|C_k|^2 |C_l^{(I)}|^2 \right] = 0 \]
+
+So the norm should be conserved for each replica in CTMQC.
+
+\section{Rabi Oscillation \label{ap:Rabi}}
+By only allowing one parameter to vary in the propagation one can isolate and test that. For the electronic propagation I held the nuclear positions constant resulting in rabi oscillation. This is due  to the Schr\"odinger equation changing from a partial differential equation to, an analytically solvable, ordinary differential equation  i.e:
+\[i \hbar \frac{\delta}{\delta t} \Phi(\textbf{R}(t), t) = \hat{H}(\textbf{R}(t), t) \Phi(\textbf{R}(t), t)\]
+\[\downarrow\]
+\[i \hbar \frac{d}{d t} \Phi(t) = \hat{H}(t) \Phi( t)\]
+Which has the general solution:
+\[\Phi(t) = e^{i \hbar \hat{H}t} \Phi(0)\]
 
 
 
-
-
-\chapter{Another Appendix About Things}
-\label{appendixlabel2}
-(things)
 
 \chapter{Colophon}
 \label{appendixlabel3}
