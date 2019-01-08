@@ -1,0 +1,7 @@
+PWD /home/Sangeya/Documents/PhD/Upgrade_Viva/ucl-latex-thesis-templates-master
+INPUT /home/Sangeya/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt
+INPUT Introduction.tex
+OUTPUT Introduction.log
+INPUT /usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmbx10.tfm
+OUTPUT Introduction.pdf
+INPUT /home/Sangeya/.miktex/texmfs/data/pdftex/config/pdftex.map

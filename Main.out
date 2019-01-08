@@ -1,0 +1,37 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Charge Transport Regimes in Organic Semiconductors}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Organic Semiconductors}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Band-like Transport}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Hopping-like Transport}{section.1.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Atomisitc Simulations of Nonadiabatic Processes}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.2.1}{Surface Hopping and Ehrenfest Dynamics }{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.2}{Motivation for my Work}{section.1.2}% 8
+\BOOKMARK [0][-]{chapter.2}{FOB Formalism}{}% 9
+\BOOKMARK [1][-]{section.2.1}{AOM}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Different Bases}{chapter.2}% 11
+\BOOKMARK [0][-]{chapter.3}{CTMQC}{}% 12
+\BOOKMARK [1][-]{section.3.1}{Exact Factorisation}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.2}{Approximations in CTMQC}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.2.1}{Classical Nuclei}{section.3.2}% 15
+\BOOKMARK [2][-]{subsection.3.2.2}{Neglect the ENCO in the TDPES}{section.3.2}% 16
+\BOOKMARK [2][-]{subsection.3.2.3}{Derivative of the Adiabatic Coefficients}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.4}{Gaussian Nuclear Wavepackets}{section.3.2}% 18
+\BOOKMARK [2][-]{subsection.3.2.5}{Seperating the Effects of Decoherence and NACVs}{section.3.2}% 19
+\BOOKMARK [1][-]{section.3.3}{The CTMQC equations}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.3.1}{Adiabatic Basis }{section.3.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.2}{Diabatic Basis}{section.3.3}% 22
+\BOOKMARK [1][-]{section.3.4}{Calculating the Quantum Momentum }{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.5}{Testing my Implementation}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.5.1}{Rabi Oscillation}{section.3.5}% 25
+\BOOKMARK [2][-]{subsection.3.5.2}{Energy Conservation}{section.3.5}% 26
+\BOOKMARK [2][-]{subsection.3.5.3}{Norm Conservation}{section.3.5}% 27
+\BOOKMARK [2][-]{subsection.3.5.4}{Time-Derivative of the Sum Over Trajectories of Adiabatic Populations}{section.3.5}% 28
+\BOOKMARK [0][-]{chapter.4}{General Conclusions}{}% 29
+\BOOKMARK [0][-]{chapter.4}{Appendices}{}% 30
+\BOOKMARK [0][-]{appendix.A}{Derivations}{}% 31
+\BOOKMARK [1][-]{section.A.1}{Preservation of the Norm }{appendix.A}% 32
+\BOOKMARK [2][-]{subsection.A.1.1}{Ehrenfest }{section.A.1}% 33
+\BOOKMARK [2][-]{subsection.A.1.2}{CTMQC }{section.A.1}% 34
+\BOOKMARK [1][-]{section.A.2}{Rabi Oscillation }{appendix.A}% 35
+\BOOKMARK [0][-]{appendix.B}{Colophon}{}% 36
+\BOOKMARK [0][-]{appendix.B}{Bibliography}{}% 37

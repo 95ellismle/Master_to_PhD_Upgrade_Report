@@ -1,0 +1,131 @@
+\addcontentsline{toc}{chapter}{Appendices}
+
+% The \appendix command resets the chapter counter, and changes the chapter numbering scheme to capital letters.
+%\chapter{Appendices}
+\appendix
+\chapter{Derivations}
+\label{ap:derivations}
+% \section{Classical Limit of Nuclear TDSE \label{ap:polar_X}}
+% The time-dependent nuclear Schr\"odinger equation:
+% \[i \ \hbar \frac{\delta}{\delta t} \chi (\textbf{R}, t) = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}(\textbf{R}, t)]^2}{2 M_{\nu}} + \epsilon(\textbf{R}, t)\right) \chi (\textbf{R}, t)\]
+% Substituting the polar form $\chi(\textbf{R}, t) = |\chi(\textbf{R}, t)|e^{\frac{i}{\hbar}S(\textbf{R}, t)}$
+% \[i \ \hbar \frac{\delta}{\delta t} |\chi(\textbf{R}, t)|e^{\frac{i}{\hbar}S(\textbf{R}, t)} = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}(\textbf{R}, t)]^2}{2 M_{\nu}} + \epsilon(\textbf{R}, t)\right) |\chi(\textbf{R}, t)|e^{\frac{i}{\hbar}S(\textbf{R}, t)}\]
+% We can remove the dependencies to neaten the equations up:
+% \[i \ \hbar \frac{\delta}{\delta t} |\chi|e^{\frac{i}{\hbar}S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}]^2}{2 M_{\nu}} + \epsilon \right) |\chi |e^{\frac{i}{\hbar}S}\]
+% Using chain rule to expand the time-derivative:
+% \[i \ \hbar (|\dot{\chi}|e^{\frac{i}{\hbar}S} + |\chi|\dot{e^{\frac{i}{\hbar}S}}) = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}]^2}{2 M_{\nu}} + \epsilon \right) |\chi |e^{\frac{i}{\hbar}S}\]
+% ...
+% \[i \ \hbar (|\dot{\chi}|e^{\frac{i}{\hbar}S} + |\chi|\frac{i}{\hbar}\dot{S} e^{\frac{i}{\hbar}S}) = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}]^2}{2 M_{\nu}} + \epsilon \right) |\chi |e^{\frac{i}{\hbar}S}\]
+% Tidying up the LHS a bit and removing totally imaginary parts:
+% \[\cancel{i \ \hbar |\dot{\chi}|e^{\frac{i}{\hbar}S}} - |\chi|\dot{S} e^{\frac{i}{\hbar}S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i \ \hbar\nabla_{\nu} + \textbf{A}_{\nu}]^2}{2 M_{\nu}} + \epsilon \right) |\chi |e^{\frac{i}{\hbar}S}\]
+% Expanding out the squared bracket in the RHS:
+% \[- |\chi| \dot{S} e^{\frac{i}{\hbar}S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{(-i \ \hbar\nabla_{\nu})^2 + \textbf{A}_{\nu}^2 - i \ \hbar (\nabla_{\nu}\textbf{A}_{\nu}) -i \ \hbar \textbf{A}_{\nu}\nabla_{\nu}) }{2 M_{\nu}} + \epsilon \right) |\chi |e^{\frac{i}{\hbar}S}\]
+% Treating just the RHS (multiplying out the bracket):
+% \begin{dmath*}
+%   - |\chi| \dot{S} e^{\frac{i}{\hbar}S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{1}{2 M_{\nu}}\left(
+%   \underbrace{(- \hbar^2 \nabla_{\nu}^2 |\chi |e^{\frac{i}{\hbar}S})}_{(1)}
+%   + \underbrace{(\textbf{A}_{\nu}^2|\chi |e^{\frac{i}{\hbar}S})}_{(2)}
+%   - \underbrace{(2 i \ \hbar \nabla_{\nu}\textbf{A}_{\nu} |\chi |e^{\frac{i}{\hbar}}S)}_{(3)}
+%  \right) + \epsilon |\chi |e^{\frac{i}{\hbar}S} \right)
+% \end{dmath*}
+%
+% \noindent Treating term 1 and 3 seperately:
+%
+% \subsection{Term 1 \label{ap:polar_X_4}}
+% \[TERM \ 1 = -\hbar^2\nabla^2_{\nu}|\chi |e^{\frac{i}{\hbar}S}\]
+% Taking a single derivative:
+% \[TERM \ 1 = -\hbar^2\nabla_{\nu}\left[ \nabla_{\nu}(|\chi |)e^{\frac{i}{\hbar}S} + |\chi |\nabla_{\nu}(e^{\frac{i}{\hbar}S}) \right]\]
+% Using chain rule:
+% \[TERM \ 1 = -\hbar^2\nabla_{\nu}\left[ \nabla_{\nu}(|\chi |)e^{\frac{i}{\hbar}S} + |\chi|\frac{i}{\hbar}e^{\frac{i}{\hbar}S} \nabla_{\nu}(S)  \right]\]
+% Taking the derivative again:
+% \[TERM \ 1 = -\hbar^2\left[(\nabla_{\nu}^2|\chi |)e^{\frac{i}{\hbar}S} + (\nabla_{\nu}|\chi |)\frac{i}{\hbar}e^{\frac{i}{\hbar}S} (\nabla_{\nu} S) + (\nabla_{\nu}|\chi|)\frac{i}{\hbar}e^{\frac{i}{\hbar}S} (\nabla_{\nu} S) + |\chi|\frac{-1}{\hbar^2}e^{\frac{i}{\hbar}S} (\nabla_{\nu}^2 S) \right] \]
+% Tidying up (taking the $e^{\frac{i}{\hbar}S}$ outside the bracket, gathering like terms and removing imaginary terms):
+% \[TERM \ 1 = -\hbar^2\left[\nabla_{\nu}^2|\chi | + \cancel{\frac{2i}{\hbar} (\nabla_{\nu}|\chi |\nabla_{\nu} S)} - \frac{|\chi|}{\hbar^2}(\nabla_{\nu}^2 S) \right] e^{\frac{i}{\hbar}S} \]
+% \[TERM \ 1 = -\hbar^2\left[\nabla_{\nu}^2|\chi | - \frac{|\chi|}{\hbar^2}  (\nabla_{\nu}^2 S)\right] e^{\frac{i}{\hbar}S}\]
+%
+% \subsection{Term 3 \label{ap:polar_X_2}}
+% \[TERM \ 3  = 2 i \ \hbar \nabla_{\nu}\textbf{A}_{\nu} |\chi |e^{\frac{i}{\hbar}}S\]
+% Using chain rule (and cancelling imaginary terms)
+% \[TERM \ 3  = 2 i \ \hbar \left[ \cancel{\nabla_{\nu}\textbf{A}_{\nu} |\chi |e^{\frac{i}{\hbar}}S} + \cancel{\textbf{A}_{\nu} \nabla_{\nu}|\chi |e^{\frac{i}{\hbar}}S} + \textbf{A}_{\nu} |\chi |\nabla_{\nu}e^{\frac{i}{\hbar}}S\right]\]
+% ...
+% \[TERM \ 3 = 2 i \ \hbar \textbf{A}_{\nu} |\chi |\frac{i}{\hbar}e^{\frac{i}{\hbar}S} \nabla_{\nu}S \]
+% Tidying up:
+% \[TERM \ 3 = -2 |\chi |e^{\frac{i}{\hbar}S} \textbf{A}_{\nu} \nabla_{\nu}S \]
+% \subsection{Putting it all together \label{ap:Polar_X_final}}
+% \begin{dmath*}
+%   - |\chi| \dot{S} e^{\frac{i}{\hbar}S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{1}{2 M_{\nu}}\left(
+%   -\hbar^2\left[\nabla_{\nu}^2|\chi | - \frac{|\chi|}{\hbar^2}  (\nabla_{\nu}^2 S)\right] e^{\frac{i}{\hbar}S}
+%   + (\textbf{A}_{\nu}^2|\chi |e^{\frac{i}{\hbar}S})
+%   + 2 |\chi |e^{\frac{i}{\hbar}S} \textbf{A}_{\nu} \nabla_{\nu}S
+%  \right) + \epsilon |\chi |e^{\frac{i}{\hbar}S} \right)
+% \end{dmath*}
+%
+% Dividing through by $-|\chi |e^{\frac{i}{\hbar}S}$:
+% \begin{dmath*}
+%   \dot{S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{1}{2 M_{\nu}}\left(
+%   \hbar^2\left[\frac{\nabla_{\nu}^2|\chi |}{|\chi|} - \frac{1}{\hbar^2}  (\nabla_{\nu}^2 S)\right]
+%   - \textbf{A}_{\nu}^2
+%   - 2 \textbf{A}_{\nu} \nabla_{\nu}S
+%  \right) - \epsilon \right)
+% \end{dmath*}
+% Tidying up:
+% \begin{dmath*}
+%   \dot{S} = \left( \sum_{\nu = 1}^{N_{n}} \frac{1}{2 M_{\nu}}\left(
+%   \hbar^2\frac{\nabla_{\nu}^2|\chi |}{|\chi|} - \left( \nabla_{\nu}^2 S
+%   + \textbf{A}_{\nu}^2
+%   + 2 \textbf{A}_{\nu} \nabla_{\nu}S\right)
+%  \right) - \epsilon \right)
+% \end{dmath*}
+% Factorising and more tidying:
+% \begin{dmath*}
+%   \dot{S} = \left( \underbrace{\hbar^2 \sum_{\nu = 1}^{N_{n}} \frac{1}{2 M_{\nu}}
+%   \frac{\nabla_{\nu}^2|\chi |}{|\chi|}}_{\text{Quantum Potential}}  - \epsilon - \sum_{\nu = 1}^{N_{n}} \frac{(\nabla_{\nu}S
+%   + \textbf{A}_{\nu})^2}{2 M_{\nu}} \right)
+% \end{dmath*}
+
+\section{Preservation of the Norm \label{ap:Norm_Pres}}
+\subsection{Ehrenfest \label{ap:Norm_Pres_Eh}}
+The statement of the conservation of norm is:
+\[ \sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l}^{(I)} \vert^2 = 0\]
+Using chain rule (and assuming this hold for each replica) we can write this as:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = \left(\frac{d}{dt} C_{l}^{*}\right)C_{l} + C_{l}^*\left(\frac{d}{dt} C_{l}\right)\]
+If we write, $C_l = (a + bi)$ and $C_l^* = (a - bi)$ we can see the following relation holds:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = \sum_{l}^{N_{states}} \left(\frac{d}{dt} C_{l}^{*}\right)C_{l} + C_{l}^*\left(\frac{d}{dt} C_{l}\right) = \sum_{l}^{N_{states}} 2\mathcal{R} \left[ C_{l}^*\left(\frac{d}{dt} C_{l}\right) \right]\]
+We have an expression for the time-derivative of the adiabatic expansion coefficient, under Ehrenfest (equation \eqref{eq:adiab_elec}). Inserting this above we get:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = \sum_{l}^{N_{states}}2 \mathcal{R}\left[ C_{l}^* \frac{-i}{\hbar} C_{l} \epsilon_{l} - \sum_{k} C_{l}^{*} C_{k} d_{lk}^{ad} \right]\]
+The first term is imaginary so we can remove it, as we're only interested in the real components:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = - 2 \sum_{l,k}^{N_{states}} \mathcal{R}\left[  C_{l}^{*} C_{k} d_{lk}^{ad} \right]\]
+The next term is exactly zero due to the anti-symmetry of the NACE that is the equation above can be written as:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = -2 \sum_{k=2}^{N_{states}} \sum_{l<k} \mathcal{R}\left[(C_{l}^{*}C_{k} - C_{k}^{*}C_{l})d_{lk}\right] = 0\]
+
+\subsection{CTMQC \label{ap:CTMQC}}
+The proof of conservation of the norm in CTMQC is similar to Ehrnfest. Again we write:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = \sum_{l}^{N_{states}} 2\mathcal{R} \left[ C_{l}^*\left(\frac{d}{dt} C_{l}\right) \right]\]
+This time, the propagtion equation is slightly different:
+\[\sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = \sum_{l}^{N_{states}}2 \mathcal{R}\left[ C_{l}^* \frac{-i}{\hbar} C_{l} \epsilon_{l} - \sum_{k} C_{l}^{*} C_{k} d_{lk}^{ad} - \sum_{\nu=1}^{N_n}\sum_{k}\frac{\mathcal{Q}_{lk,\nu}^{(I)}}{\hbar M_{\nu}}\cdot \left(\textbf{f}_{k,\nu}^{(I)} - \textbf{f}_{l,\nu}^{(I)}\right)|C_k|^2 C_l^{(I)}C_l^{* \ (I)} \right]\]
+
+We have seen that the Ehrenfest part of the above equation conserves the norm, so we can remove that. we can also combine the 2 $C_l$ terms on the end:
+
+\[ \sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = -2 \sum_{l,k}^{N_{states}} \mathcal{R}\left[ \sum_{\nu=1}^{N_n}\frac{\mathcal{Q}_{lk,\nu}^{(I)}}{\hbar M_{\nu}}\cdot \left(\textbf{f}_{k,\nu}^{(I)} - \textbf{f}_{l,\nu}^{(I)}\right)|C_k|^2 |C_l^{(I)}|^2 \right] \]
+
+Because $\mathcal{Q}_{lk,\nu}^{(I)} = \mathcal{Q}_{kl,\nu}^{(I)}$ (and the diagonal is undefined) we can re-write the above equation as:
+\[ \sum_{l}^{N_{states}} \frac{d}{dt} \vert C_{l} \vert^2 = -2 \sum_{l}^{N_{states}} \sum_{k<l} \mathcal{R}\left[ \sum_{\nu=1}^{N_n}\frac{\mathcal{Q}_{lk,\nu}^{(I)}}{\hbar M_{\nu}}\cdot \left[ \left(\textbf{f}_{k,\nu}^{(I)} - \textbf{f}_{l,\nu}^{(I)}\right) + \left(\textbf{f}_{l,\nu}^{(I)} - \textbf{f}_{k,\nu}^{(I)}\right)\right]|C_k|^2 |C_l^{(I)}|^2 \right] = 0 \]
+
+So the norm should be conserved for each replica in CTMQC.
+
+\section{Rabi Oscillation \label{ap:Rabi}}
+By only allowing one parameter to vary in the propagation one can isolate and test that. For the electronic propagation I held the nuclear positions constant resulting in rabi oscillation. This is due  to the Schr\"odinger equation changing from a partial differential equation to, an analytically solvable, ordinary differential equation  i.e:
+\[i \hbar \frac{\delta}{\delta t} \Phi(\textbf{R}(t), t) = \hat{H}(\textbf{R}(t), t) \Phi(\textbf{R}(t), t)\]
+\[\downarrow\]
+\[i \hbar \frac{d}{d t} \Phi(t) = \hat{H}(t) \Phi( t)\]
+Which has the general solution:
+\[\Phi(t) = e^{i \hbar \hat{H}t} \Phi(0)\]
+
+
+
+
+\chapter{Colophon}
+\label{appendixlabel3}
+This document was set in the Time Roman typeface using \LaTeX and Bib\TeX, composed with the Atom text editor. The Python programming language was used for all plots and data analysis. 
+% Side note:
+%http://tex.stackexchange.com/questions/1319/showcase-of-beautiful-typography-done-in-tex-friends

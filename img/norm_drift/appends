@@ -1,0 +1,17 @@
+for i in $(ls -d */)
+do 
+   cd $i
+   for j in $(ls -d */)
+   do 
+      cd $j
+      
+      convert -gravity North -pointsize 40 -annotate +0+10 'Tanh Width = 0 au_f' CTMQC_TW\=0.0.png out1.png
+      convert -gravity North -pointsize 40 -annotate +0+10 'Tanh Width = 0.001 au_f' CTMQC_TW\=0.001.png out2.png
+      
+
+      convert +append  out1.png out2.png  out.png
+      rm out1.png out2.png
+      cd .. 
+   done
+   cd ..
+done

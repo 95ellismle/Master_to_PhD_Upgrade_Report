@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Main.aux
+The style file: unsrt.bst
+A level-1 auxiliary file: Preamble.aux
+A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: Chapter2.aux
+A level-1 auxiliary file: Chapter3.aux
+A level-1 auxiliary file: Conclusions.aux
+A level-1 auxiliary file: Appendices.aux
+Database file #1: mybib.bib
+Warning--entry type for "Curchod2011Feb" isn't style-file defined
+--line 301 of file mybib.bib
+Warning--empty journal in john_c._tully_nonadiabatic_nodate
+Warning--empty year in john_c._tully_nonadiabatic_nodate
+Warning--empty year in Whetten85
+Warning--empty year in CP2K
+Warning--empty journal in john_c._tully_nonadiabatic_1998
+You've used 54 entries,
+            1791 wiz_defined-function locations,
+            826 strings with 14860 characters,
+and the built_in function-call counts, 13178 in all, are:
+= -- 1162
+> -- 608
+< -- 2
++ -- 225
+- -- 171
+* -- 1156
+:= -- 2105
+add.period$ -- 160
+call.type$ -- 54
+change.case$ -- 54
+chr.to.int$ -- 0
+cite$ -- 59
+duplicate$ -- 489
+empty$ -- 1251
+format.name$ -- 171
+if$ -- 2809
+int.to.chr$ -- 0
+int.to.str$ -- 54
+missing$ -- 54
+newline$ -- 271
+num.names$ -- 53
+pop$ -- 90
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 193
+stack$ -- 0
+substring$ -- 1140
+swap$ -- 66
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 5
+while$ -- 132
+width$ -- 56
+write$ -- 585
+(There were 6 warnings)

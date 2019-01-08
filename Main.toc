@@ -1,0 +1,38 @@
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Charge Transport Regimes in Organic Semiconductors}{5}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Organic Semiconductors}{5}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Band-like Transport}{6}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Hopping-like Transport}{7}{subsection.1.1.3}
+\contentsline {section}{\numberline {1.2}Atomisitc Simulations of Nonadiabatic Processes}{9}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Surface Hopping and Ehrenfest Dynamics }{10}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Motivation for my Work}{12}{subsection.1.2.2}
+\contentsline {chapter}{\numberline {2}FOB Formalism}{14}{chapter.2}
+\contentsline {section}{\numberline {2.1}AOM}{14}{section.2.1}
+\contentsline {section}{\numberline {2.2}Different Bases}{15}{section.2.2}
+\contentsline {subsubsection}{\numberline {2.2.0.1}Basis Expansion}{15}{subsubsection.2.2.0.1}
+\contentsline {chapter}{\numberline {3}CTMQC}{18}{chapter.3}
+\contentsline {section}{\numberline {3.1}Exact Factorisation}{18}{section.3.1}
+\contentsline {section}{\numberline {3.2}Approximations in CTMQC}{20}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Classical Nuclei}{20}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Neglect the ENCO in the TDPES}{20}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Derivative of the Adiabatic Coefficients}{20}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Gaussian Nuclear Wavepackets}{21}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Seperating the Effects of Decoherence and NACVs}{21}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}The CTMQC equations}{21}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Adiabatic Basis }{21}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Diabatic Basis}{23}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Calculating the Quantum Momentum }{24}{section.3.4}
+\contentsline {section}{\numberline {3.5}Testing my Implementation}{25}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Rabi Oscillation}{25}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Energy Conservation}{26}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Norm Conservation}{27}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Time-Derivative of the Sum Over Trajectories of Adiabatic Populations}{30}{subsection.3.5.4}
+\contentsline {chapter}{\numberline {4}General Conclusions}{31}{chapter.4}
+\contentsline {chapter}{Appendices}{33}{chapter.4}
+\contentsline {chapter}{\numberline {A}Derivations}{33}{appendix.A}
+\contentsline {section}{\numberline {A.1}Preservation of the Norm }{33}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Ehrenfest }{33}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}CTMQC }{34}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}Rabi Oscillation }{35}{section.A.2}
+\contentsline {chapter}{\numberline {B}Colophon}{36}{appendix.B}
+\contentsline {chapter}{Bibliography}{37}{appendix.B}

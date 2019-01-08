@@ -1,0 +1,339 @@
+\begin{thebibliography}{10}
+
+\bibitem{chiang_electrical_1977}
+C.~K. Chiang, C.~R. Fincher, Y.~W. Park, A.~J. Heeger, H.~Shirakawa, E.~J.
+  Louis, S.~C. Gau, and Alan~G. MacDiarmid.
+\newblock Electrical {Conductivity} in {Doped} {Polyacetylene}.
+\newblock {\em Physical Review Letters}, 39(17):1098--1101, October 1977.
+
+\bibitem{Shirakawa1977Jan}
+Hideki Shirakawa, Edwin~J. Louis, Alan~G. MacDiarmid, Chwan~K. Chiang, and
+  Alan~J. Heeger.
+\newblock {Synthesis of electrically conducting organic polymers: halogen
+  derivatives of polyacetylene, (CH)x}.
+\newblock {\em J. Chem. Soc., Chem. Commun.}, 0(16):578--580, Jan 1977.
+
+\bibitem{Kippelen2009}
+Bernard Kippelen and Jean-Luc Br{\ifmmode\acute{e}\else\'{e}\fi}das.
+\newblock {Organic photovoltaics}.
+\newblock {\em Energy Environ. Sci.}, 2(3):251--261, 2009.
+
+\bibitem{Malachowski2010Jun}
+M.~J. Ma{\l}achowski and J.~{\ifmmode\dot{Z}\else\.{Z}\fi}mija.
+\newblock {Organic field-effect transistors}.
+\newblock {\em Opto-Electron. Rev.}, 18(2):121--136, Jun 2010.
+
+\bibitem{ThejoKalyani2012Jun}
+N.~Thejo~Kalyani and S.~J. Dhoble.
+\newblock {Organic light emitting diodes: Energy saving lighting
+  technology{\ifmmode---\else\textemdash\fi}A review}.
+\newblock {\em Renewable Sustainable Energy Rev.}, 16(5):2696--2723, Jun 2012.
+
+\bibitem{IHSMarkit}
+{OLED Display Market Tracker - Q2 2018 - IHS Technology}, Nov 2018.
+\newblock [Online; accessed 23. Nov. 2018].
+
+\bibitem{Reineke2009May}
+Sebastian Reineke, Frank Lindner, Gregor Schwartz, Nico Seidler, Karsten
+  Walzer, Bj{\ifmmode\ddot{o}\else\"{o}\fi}rn
+  L{\ifmmode\ddot{u}\else\"{u}\fi}ssem, and Karl Leo.
+\newblock {White organic light-emitting diodes with fluorescent tube
+  efficiency}.
+\newblock {\em Nature}, 459(7244):234, May 2009.
+
+\bibitem{OLED_lighting}
+Kazuki Kato, Toshihiko Iwasaki, and Takatoshi Tsujimura.
+\newblock Over 130 lm/w all-phosphorescent white oleds for next-generation
+  lighting.
+\newblock {\em Journal of Photopolymer Science and Technology}, 28:335--340, 10
+  2015.
+
+\bibitem{Brown2018Mar}
+J.~S. Brown and S.~E. Shaheen.
+\newblock {Introducing correlations into carrier transport simulations of
+  disordered materials through seeded nucleation: impact on density of states,
+  carrier mobility, and carrier statistics}.
+\newblock {\em J. Phys.: Condens. Matter}, 30(13):135702, Mar 2018.
+
+\bibitem{yavuz_dichotomy_2017}
+I.~Yavuz.
+\newblock Dichotomy between the band and hopping transport in organic crystals:
+  insights from experiments.
+\newblock {\em Physical Chemistry Chemical Physics}, 19(38):25819--25828, 2017.
+
+\bibitem{oberhofer_charge_2017}
+Harald Oberhofer, Karsten Reuter, and Jochen Blumberger.
+\newblock Charge {Transport} in {Molecular} {Materials}: {An} {Assessment} of
+  {Computational} {Methods}.
+\newblock {\em Chem. Rev.}, 117(15):10319--10357, August 2017.
+
+\bibitem{AshcroftNeilW1976Ssp}
+Neil~W Ashcroft.
+\newblock {\em Solid state physics}.
+\newblock Saunders College Publishing, Fort Worth, college ed. edition, 1976.
+
+\bibitem{KittelCharles1996Itss}
+Charles Kittel.
+\newblock {\em Introduction to solid state physics}.
+\newblock Wiley, New York, 7th ed edition, 1996.
+
+\bibitem{Habgood2011May}
+Matthew Habgood, Ricardo Grau-Crespo, and Sarah~L. Price.
+\newblock {Substitutional and orientational disorder in organic crystals: a
+  symmetry-adapted ensemble model}.
+\newblock {\em PCCP}, 13(20):9590--9600, May 2011.
+
+\bibitem{Vehoff2010Aug}
+Thorsten Vehoff, Bj{\ifmmode\ddot{o}\else\"{o}\fi}rn Baumeier, Alessandro
+  Troisi, and Denis Andrienko.
+\newblock {Charge Transport in Organic Crystals: Role of Disorder and
+  Topological Connectivity}.
+\newblock {\em J. Am. Chem. Soc.}, 132(33):11702--11708, Aug 2010.
+
+\bibitem{Gajdos2013Mar}
+Fruzsina Gajdos, Harald Oberhofer, Michel Dupuis, and Jochen Blumberger.
+\newblock {On the Inapplicability of Electron-Hopping Models for the Organic
+  Semiconductor Phenyl-C61-butyric Acid Methyl Ester (PCBM)}.
+\newblock {\em J. Phys. Chem. Lett.}, 4(6):1012--1017, Mar 2013.
+
+\bibitem{Marcus1985Aug}
+R.~A. Marcus and Norman Sutin.
+\newblock {Electron transfers in chemistry and biology}.
+\newblock {\em Biochimica et Biophysica Acta (BBA) - Reviews on Bioenergetics},
+  811(3):265--322, Aug 1985.
+
+\bibitem{spencer_fob-sh:_2016}
+J.~Spencer, F.~Gajdos, and J.~Blumberger.
+\newblock {FOB}-{SH}: {Fragment} orbital-based surface hopping for charge
+  carrier transport in organic and biological molecules and materials.
+\newblock {\em The Journal of Chemical Physics}, 145(6):064102, August 2016.
+
+\bibitem{spencer_confronting_2016}
+Jacob Spencer, Laura Scalfi, Antoine Carof, and Jochen Blumberger.
+\newblock Confronting surface hopping molecular dynamics with {Marcus} theory
+  for a molecular donor–acceptor system.
+\newblock {\em Faraday Discussions}, 195:215--236, 2016.
+
+\bibitem{gajdos_ultrafast_2014}
+Fruzsina Gajdos, Siim Valner, Felix Hoffmann, Jacob Spencer, Marian Breuer,
+  Adam Kubas, Michel Dupuis, and Jochen Blumberger.
+\newblock Ultrafast {Estimation} of {Electronic} {Couplings} for {Electron}
+  {Transfer} between pi-{Conjugated} {Organic} {Molecules}.
+\newblock {\em Journal of Chemical Theory and Computation}, 10(10):4653--4660,
+  October 2014.
+
+\bibitem{Gershenson2006Sep}
+M.~E. Gershenson, V.~Podzorov, and A.~F. Morpurgo.
+\newblock {Colloquium: Electronic transport in single-crystal organic
+  transistors}.
+\newblock {\em Rev. Mod. Phys.}, 78(3):973--989, Sep 2006.
+
+\bibitem{john_c._tully_nonadiabatic_nodate}
+John~C. Tully.
+\newblock Nonadiabatic {Dynamics}.
+\newblock pages 34--71.
+
+\bibitem{Pisana2007Feb}
+Simone Pisana, Michele Lazzeri, Cinzia Casiraghi, Kostya~S. Novoselov, A.~K.
+  Geim, Andrea~C. Ferrari, and Francesco Mauri.
+\newblock {Breakdown of the adiabatic Born{\textendash}Oppenheimer
+  approximation in graphene}.
+\newblock {\em Nat. Mater.}, 6(3):198, Feb 2007.
+
+\bibitem{Born1927Jan}
+M.~Born and R.~Oppenheimer.
+\newblock {Zur Quantentheorie der Molekeln}.
+\newblock {\em Ann. Phys.}, 389(20):457--484, Jan 1927.
+
+\bibitem{tully_nonadiabatic_1991}
+John~C. Tully.
+\newblock Nonadiabatic molecular dynamics.
+\newblock {\em International Journal of Quantum Chemistry}, 40(S25):299--309,
+  1991.
+
+\bibitem{Martnnez*2005Oct}
+Todd~J. Mart{\ifmmode\acute{\imath}\else\'{\i}\fi}nez{$\ast$}.
+\newblock {Insights for Light-Driven Molecular Devices from Ab Initio Multiple
+  Spawning Excited-State Dynamics of Organic and Biological Chromophores}.
+\newblock {\em American Chemical Society}, Oct 2005.
+
+\bibitem{Albareda2014Aug}
+Guillermo Albareda, Heiko Appel, Ignacio Franco, Ali Abedi, and Angel Rubio.
+\newblock {Correlated Electron-Nuclear Dynamics with Conditional Wave
+  Functions}.
+\newblock {\em Phys. Rev. Lett.}, 113(8):083003, Aug 2014.
+
+\bibitem{Tully1990Jul}
+John~C. Tully.
+\newblock {Molecular dynamics with electronic transitions}.
+\newblock {\em J. Chem. Phys.}, 93(2):1061--1071, Jul 1990.
+
+\bibitem{Whetten85}
+R.~L et~al Whetten.
+\newblock Molecular dynamics beyond the adiabatic approximation: New
+  experiments and theory.
+\newblock {\em Ann. Rev. Phys. Chem.}, 36:277--320.
+
+\bibitem{Coker1995Jan}
+D.~F. Coker and L.~Xiao.
+\newblock {Methods for molecular dynamics with nonadiabatic transitions}.
+\newblock {\em J. Chem. Phys.}, 102(1):496--510, Jan 1995.
+
+\bibitem{tully_perspective:_2012}
+John~C. Tully.
+\newblock Perspective: {Nonadiabatic} dynamics theory.
+\newblock {\em The Journal of Chemical Physics}, 137(22):22A301, December 2012.
+
+\bibitem{parandekar_detailed_2006}
+Priya~V. Parandekar and John~C. Tully.
+\newblock Detailed {Balance} in {Ehrenfest} {Mixed} {Quantum}-{Classical}
+  {Dynamics}.
+\newblock {\em Journal of Chemical Theory and Computation}, 2(2):229--235,
+  March 2006.
+
+\bibitem{agostini_quantum-classical_2016}
+Federica Agostini, Seung~Kyu Min, Ali Abedi, and E.~K.~U. Gross.
+\newblock Quantum-{Classical} {Nonadiabatic} {Dynamics}: {Coupled}- vs
+  {Independent}-{Trajectory} {Methods}.
+\newblock {\em Journal of Chemical Theory and Computation}, 12(5):2127--2143,
+  May 2016.
+
+\bibitem{abedi_exact_2010}
+Ali Abedi, Neepa~T. Maitra, and E.~K.~U. Gross.
+\newblock Exact {Factorization} of the {Time}-{Dependent} {Electron}-{Nuclear}
+  {Wave} {Function}.
+\newblock {\em Physical Review Letters}, 105(12), September 2010.
+
+\bibitem{abedi_dynamical_2013}
+Ali Abedi, Federica Agostini, Yasumitsu Suzuki, and E.~K.~U. Gross.
+\newblock Dynamical {Steps} that {Bridge} {Piecewise} {Adiabatic} {Shapes} in
+  the {Exact} {Time}-{Dependent} {Potential} {Energy} {Surface}.
+\newblock {\em Physical Review Letters}, 110(26), June 2013.
+
+\bibitem{Prezhdo1997Oct}
+Oleg~V. Prezhdo and Peter~J. Rossky.
+\newblock {Evaluation of quantum transition rates from quantum-classical
+  molecular dynamics simulations}.
+\newblock {\em J. Chem. Phys.}, 107(15):5863--5878, Oct 1997.
+
+\bibitem{Braga2009Feb}
+Daniele Braga and Gilles Horowitz.
+\newblock {High{-}Performance Organic Field{-}Effect Transistors}.
+\newblock {\em Adv. Mater.}, 21(14-15):1473--1486, Feb 2009.
+
+\bibitem{Baris2014Aug}
+Behzad Bar{\ifmmode\imath\else\i\fi}{\ifmmode\mbox{\c{s}}\else\c{s}\fi},
+  Hatice~G{\ifmmode\ddot{u}\else\"{u}\fi}rel
+  {\ifmmode\ddot{O}\else\"{O}\fi}zdemir, Nihat
+  Tu{\ifmmode\breve{g}\else\u{g}\fi}luo{\ifmmode\breve{g}\else\u{g}\fi}lu,
+  Serdar Karadeniz, {\ifmmode\ddot{O}\else\"{O}\fi}mer~Faruk
+  Y{\ifmmode\ddot{u}\else\"{u}\fi}ksel, and Zeynep
+  Ki{\ifmmode\mbox{\c{s}}\else\c{s}\fi}ni{\ifmmode\mbox{\c{s}}\else\c{s}\fi}ci.
+\newblock {Optical dispersion and dielectric properties of rubrene organic
+  semiconductor thin film}.
+\newblock {\em J. Mater. Sci. - Mater. Electron.}, 25(8):3586--3593, Aug 2014.
+
+\bibitem{Tiwari2010May}
+Shree~Prakash Tiwari, William~J. Potscavage, Tissa Sajoto, Stephen Barlow,
+  Seth~R. Marder, and Bernard Kippelen.
+\newblock {Pentacene organic field-effect transistors with doped
+  electrode-semiconductor contacts}.
+\newblock {\em Org. Electron.}, 11(5):860--863, May 2010.
+
+\bibitem{Kim2015Dec}
+Tae-Young Kim, Jingon Jang, Kyungjune Cho, Younggul Song, Woanseo Park, Jinsu
+  Park, Jae-Keun Kim, Woong-Ki Hong, and Takhee Lee.
+\newblock {Interface effect in pentacene field-effect transistors from high
+  energy proton beam irradiation}.
+\newblock {\em Org. Electron.}, 27:240--246, Dec 2015.
+
+\bibitem{giannini_crossover_2018}
+Samuele Giannini, Antoine Carof, and Jochen Blumberger.
+\newblock Crossover from {Hopping} to {Band}-{Like} {Charge} {Transport} in an
+  {Organic} {Semiconductor} {Model}: {Atomistic} {Nonadiabatic} {Molecular}
+  {Dynamics} {Simulation}.
+\newblock {\em The Journal of Physical Chemistry Letters}, 9(11):3116--3123,
+  June 2018.
+
+\bibitem{carof_detailed_2017}
+Antoine Carof, Samuele Giannini, and Jochen Blumberger.
+\newblock Detailed balance, internal consistency, and energy conservation in
+  fragment orbital-based surface hopping.
+\newblock {\em The Journal of Chemical Physics}, 147(21):214113, December 2017.
+
+\bibitem{agostini_exact_2015}
+Federica Agostini, Ali Abedi, Yasumitsu Suzuki, Seung~Kyu Min, Neepa~T. Maitra,
+  and E.~K.~U. Gross.
+\newblock The exact forces on classical nuclei in non-adiabatic charge
+  transfer.
+\newblock {\em The Journal of Chemical Physics}, 142(8):084303, February 2015.
+
+\bibitem{agostini_semiclassical_2015}
+Federica Agostini, Seung~Kyu Min, and E.~K.~U. Gross.
+\newblock Semiclassical analysis of the electron-nuclear coupling in electronic
+  non-adiabatic processes.
+\newblock {\em Annalen der Physik}, 527(9-10):546--555, October 2015.
+
+\bibitem{agostini_mixed_2013}
+Federica Agostini, Ali Abedi, Yasumitsu Suzuki, and E.K.U. Gross.
+\newblock Mixed quantum-classical dynamics on the exact time-dependent
+  potential energy surface: a fresh look at non-adiabatic processes.
+\newblock {\em Molecular Physics}, 111(22-23):3625--3640, December 2013.
+
+\bibitem{Min2014Dec}
+Seung~Kyu Min, Ali Abedi, Kwang~S. Kim, and E.~K.~U. Gross.
+\newblock {Is the Molecular Berry Phase an Artifact of the Born-Oppenheimer
+  Approximation?}
+\newblock {\em Phys. Rev. Lett.}, 113(26):263004, Dec 2014.
+
+\bibitem{Shakib2017Jul}
+Farnaz~A. Shakib and Pengfei Huo.
+\newblock {Ring Polymer Surface Hopping: Incorporating Nuclear Quantum Effects
+  into Nonadiabatic Molecular Dynamics Simulations}.
+\newblock {\em J. Phys. Chem. Lett.}, 8(13):3073--3080, Jul 2017.
+
+\bibitem{Curchod2011Feb}
+Basile F.~E. Curchod, Ivano Tavernelli, and Ursula Rothlisberger.
+\newblock {Trajectory-based solution of the nonadiabatic quantum dynamics
+  equations: an on-the-fly approach for molecular dynamics simulations}, Feb
+  2011.
+
+\bibitem{Tavernelli2013Apr}
+Ivano Tavernelli.
+\newblock {Ab initio--driven trajectory-based nuclear quantum dynamics in phase
+  space}.
+\newblock {\em Phys. Rev. A}, 87(4):042501, Apr 2013.
+
+\bibitem{Scherrer2015Aug}
+Arne Scherrer, Federica Agostini, Daniel Sebastiani, E.~K.~U. Gross, and
+  Rodolphe Vuilleumier.
+\newblock {Nuclear velocity perturbation theory for vibrational circular
+  dichroism: An approach based on the exact factorization of the
+  electron-nuclear wave function}.
+\newblock {\em J. Chem. Phys.}, 143(7):074106, Aug 2015.
+
+\bibitem{gossel_coupled-trajectory_2018}
+Graeme~H. Gossel, Federica Agostini, and Neepa~T. Maitra.
+\newblock Coupled-{Trajectory} {Mixed} {Quantum}-{Classical} {Algorithm}: {A}
+  {Deconstruction}.
+\newblock {\em Journal of Chemical Theory and Computation}, August 2018.
+
+\bibitem{CP2K}
+J.~VandeVondele, J;~Hutter.
+\newblock Gaussian basis sets for accurate calculations on molecular systems in
+  gas and condensed phases.
+\newblock {\em The Journal of Chemical Physics}, 127(11).
+
+\bibitem{min_ab_2017}
+Seung~Kyu Min, Federica Agostini, Ivano Tavernelli, and E.~K.~U. Gross.
+\newblock Ab {Initio} {Nonadiabatic} {Dynamics} with {Coupled} {Trajectories}:
+  {A} {Rigorous} {Approach} to {Quantum} ({De}){Coherence}.
+\newblock {\em The Journal of Physical Chemistry Letters}, 8(13):3048--3055,
+  July 2017.
+
+\bibitem{john_c._tully_nonadiabatic_1998}
+John~C. Tully.
+\newblock Nonadiabatic {Dynamics}.
+\newblock pages 34--71, 1998.
+
+\end{thebibliography}
