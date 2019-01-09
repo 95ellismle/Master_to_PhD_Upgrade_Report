@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.7)  8 JAN 2019 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.7)  9 JAN 2019 15:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -738,11 +738,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip68
 ))
 (./FloatSettings.tex) (./BibSettings.tex) (./Main.aux (./Preamble.aux)
-(./Introduction.aux
-
-LaTeX Warning: Label `fig:Eh_diag' multiply defined.
-
-) (./Chapter2.aux) (./Chapter3.aux
+(./Introduction.aux) (./Chapter2.aux) (./Chapter3.aux
 
 LaTeX Warning: Label `sec:ad_eqns' multiply defined.
 
@@ -920,17 +916,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--10
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--10
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--10
+Underfull \hbox (badness 10000) in paragraph at lines 5--39
 
  []
 
@@ -942,149 +928,121 @@ Underfull \vbox (badness 1019) has occurred while \output is active []
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 11--16
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--16
-
- []
-
-[6]
-<./img/diabatic_wells.png, id=256, 1864.9675pt x 984.67876pt>
-File: ./img/diabatic_wells.png Graphic file (type png)
-<use ./img/diabatic_wells.png>
-Package pdftex.def Info: ./img/diabatic_wells.png  used on input line 22.
-(pdftex.def)             Requested size: 483.69684pt x 255.37938pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
-<./img/adiabatic_wells.png, id=263, 1852.9225pt x 976.64874pt>
-File: ./img/adiabatic_wells.png Graphic file (type png)
-<use ./img/adiabatic_wells.png>
-Package pdftex.def Info: ./img/adiabatic_wells.png  used on input line 31.
-(pdftex.def)             Requested size: 483.69684pt x 254.95094pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--39
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--39
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--39
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--39
-
- []
-
-[7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8 <./img/diabatic_wells.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 40--43
 
  []
 
-[9 <./img/adiabatic_wells.png>]
-<./img/SH_hop.png, id=314, 908.39375pt x 892.33376pt>
+[6]
+<./img/SH_hop.png, id=254, 908.39375pt x 892.33376pt>
 File: ./img/SH_hop.png Graphic file (type png)
 <use ./img/SH_hop.png>
-Package pdftex.def Info: ./img/SH_hop.png  used on input line 47.
+Package pdftex.def Info: ./img/SH_hop.png  used on input line 46.
 (pdftex.def)             Requested size: 217.6621pt x 213.81046pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
 
-Underfull \hbox (badness 1184) in paragraph at lines 48--48
-\OT1/ptm/m/n/10.95 black lines rep-re-sent the adi-a-batic
+Underfull \hbox (badness 1048) in paragraph at lines 47--47
+[][]|[][]\OT1/ptm/m/n/10.95 An ex-am-ple of a sur-face hop-ping
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
 []\OT1/ptm/m/n/12 In sur-face hop-ping, Ehren-fest and CT-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
 \OT1/ptm/m/n/12 MQC dy-nam-ics the ef-fect of the elec-trons
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
 \OT1/ptm/m/n/12 on the nu-clei is felt through the po-ten-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-\OT1/ptm/m/n/12 tial en-ergy sur-face. In short the elec-
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 tial en-ergy sur-face. In short, the elec-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-\OT1/ptm/m/n/12 tronic pop-u-la-tions con-trol what the po-ten-
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 tronic pop-u-la-tions con-trol how the po-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-\OT1/ptm/m/n/12 tial en-ergy sur-face the nu-clei are trav-el-ling
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 ten-tial en-ergy sur-face looks. This in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-\OT1/ptm/m/n/12 on looks like. All the meth-ods rely on
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 turn con-trols the mo-tion of the nu-clei
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-\OT1/ptm/m/n/12 a swarm of tra-jec-to-ries with slightly dif-fer-
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 through $\OML/ztmcm/m/it/12 F \OT1/ztmcm/m/n/12 = \OMS/ztmcm/m/
+n/12 ^^@r\OML/ztmcm/m/it/12 E$\OT1/ptm/m/n/12 . This method re-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-\OT1/ptm/m/n/12 ent ini-tial con-di-tions to sam-ple con-fig-u-ra-tion
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 lies on a swarm of tra-jec-to-ries with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 slightly dif-fer-ent ini-tial con-di-tions to sam-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 ple con-fig-u-ra-tion space. In this way
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 branch-ing of the nu-clear wavepacket can
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 be cap-tured as dif-fer-ent tra-jec-to-ries can
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/12 travel on dif-fer-ent po-ten-tial en-ergy sur-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
 
  []
 
-[10 <./img/SH_hop.png>] [11]
-<./img/Eh_hop.png, id=335, 908.39375pt x 892.33376pt>
+[7 <./img/SH_hop.png>]
+<./img/Eh_hop.png, id=267, 908.39375pt x 892.33376pt>
 File: ./img/Eh_hop.png Graphic file (type png)
 <use ./img/Eh_hop.png>
-Package pdftex.def Info: ./img/Eh_hop.png  used on input line 57.
+Package pdftex.def Info: ./img/Eh_hop.png  used on input line 54.
 (pdftex.def)             Requested size: 217.6621pt x 213.81046pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--59
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--59
-
- []
-
-
-Underfull \hbox (badness 2150) in paragraph at lines 59--61
+Underfull \hbox (badness 2150) in paragraph at lines 57--59
 []\OT1/ptm/m/n/12 Another pop-u-lar tech-nique in the field of non-
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 63--100
+Underfull \hbox (badness 10000) in paragraph at lines 61--100
 
  []
 
-[12 <./img/Eh_hop.png>] [13]
+[8 <./img/Eh_hop.png>]
 \openout2 = `Chapter2.aux'.
 
  (./Chapter2.tex
 Chapter 2.
-<./img/SOMO.png, id=359, 137.01187pt x 107.65219pt>
+<./img/SOMO.png, id=289, 137.01187pt x 107.65219pt>
 File: ./img/SOMO.png Graphic file (type png)
 <use ./img/SOMO.png>
 Package pdftex.def Info: ./img/SOMO.png  used on input line 7.
@@ -1104,7 +1062,7 @@ Underfull \hbox (badness 3168) in paragraph at lines 14--17
 \OT1/ptm/m/n/12 This ap-prox-i-ma-tion was orig-i-nally by Longuet-
  []
 
-[14
+[9
 
 
 
@@ -1113,7 +1071,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--37
 
  []
 
-[15]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 50--53
 
  []
@@ -1124,148 +1082,166 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--101
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 56--101
+
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
-[17]
+ [11]
+[12]
 \openout2 = `Chapter3.aux'.
 
  (./Chapter3.tex
 Chapter 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
 
 Underfull \hbox (badness 10000) in paragraph at lines 20--23
 
  []
 
-[18
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13
 
 
 
 ]
-<./img/nuclear_splitting_TDPES.png, id=425, 677.53125pt x 458.46281pt>
+<./img/nuclear_splitting_TDPES.png, id=361, 677.53125pt x 458.46281pt>
 File: ./img/nuclear_splitting_TDPES.png Graphic file (type png)
 <use ./img/nuclear_splitting_TDPES.png>
 Package pdftex.def Info: ./img/nuclear_splitting_TDPES.png  used on input line 
-31.
-(pdftex.def)             Requested size: 338.5863pt x 229.11891pt.
+32.
+(pdftex.def)             Requested size: 241.84842pt x 163.64737pt.
 
-Overfull \hbox (120.92421pt too wide) in paragraph at lines 31--32
-[][] 
+Underfull \hbox (badness 4291) in paragraph at lines 33--33
+[][]|\OT1/ptm/m/n/10.95 A demon-stra-tion of how the TD-PES
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--33
-\OT1/ptm/m/n/12 given by $\OMS/ztmcm/m/n/12 h\OT1/ztmcm/m/n/12 ^^H[](\OML/ztmcm
-/m/it/12 t\OT1/ztmcm/m/n/12 )\OMS/ztmcm/m/n/12 j[] \OT1/ztmcm/m/n/12 + [] \OMS/
-ztmcm/m/n/12 ^^@ \OML/ztmcm/m/it/12 i[][]\OMS/ztmcm/m/n/12 j\OT1/ztmcm/m/n/12 ^
-^H[](\OML/ztmcm/m/it/12 t\OT1/ztmcm/m/n/12 )\OMS/ztmcm/m/n/12 i[]$\OT1/ptm/m/n/
-12 .
+Underfull \hbox (badness 2189) in paragraph at lines 33--33
+\OT1/ptm/m/n/10.95 can cause the split-ting of the nu-clear
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19 <./img/nuclear_splitting_TDPES.png>] [20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
-Underfull \hbox (badness 10000) in paragraph at lines 86--92
+Underfull \hbox (badness 10000) in paragraph at lines 26--34
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-Underfull \hbox (badness 10000) in paragraph at lines 108--116
+ [14 <./img/nuclear_splitting_TDPES.png>] [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+Underfull \hbox (badness 10000) in paragraph at lines 87--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--116
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+Underfull \hbox (badness 10000) in paragraph at lines 109--117
 
  []
 
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 117--120
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--117
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 118--121
 
  []
 
 
 Underfull \vbox (badness 7012) has occurred while \output is active []
 
- [24]
-<./img/Rabi_Oscillation_trimer.png, id=510, 527.72156pt x 568.37344pt>
-File: ./img/Rabi_Oscillation_trimer.png Graphic file (type png)
-<use ./img/Rabi_Oscillation_trimer.png>
-Package pdftex.def Info: ./img/Rabi_Oscillation_trimer.png  used on input line 
-147.
-(pdftex.def)             Requested size: 306.45718pt x 330.05196pt.
+ [19]
+<./img/3_reps_RABI.png, id=445, 1475.5125pt x 882.29625pt>
+File: ./img/3_reps_RABI.png Graphic file (type png)
+<use ./img/3_reps_RABI.png>
+Package pdftex.def Info: ./img/3_reps_RABI.png  used on input line 148.
+(pdftex.def)             Requested size: 483.69684pt x 289.22003pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
-Underfull \hbox (badness 10000) in paragraph at lines 150--152
+ [20]
+Underfull \hbox (badness 10000) in paragraph at lines 151--153
 
  []
 
-<./img/energy_conservation.png, id=521, 1734.48pt x 935.8965pt>
+<./img/energy_conservation.png, id=456, 1734.48pt x 935.8965pt>
 File: ./img/energy_conservation.png Graphic file (type png)
 <use ./img/energy_conservation.png>
-Package pdftex.def Info: ./img/energy_conservation.png  used on input line 155.
+Package pdftex.def Info: ./img/energy_conservation.png  used on input line 156.
 
 (pdftex.def)             Requested size: 483.69684pt x 260.99246pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--160
+[21 <./img/3_reps_RABI.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 159--161
 
  []
 
-[26 <./img/Rabi_Oscillation_trimer.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 162--165
 
  []
 
-
-Underfull \vbox (badness 1226) has occurred while \output is active []
-
- [27 <./img/energy_conservation.png>]
-<./img/fl_fk_causing_spikes.png, id=537, 1387.584pt x 742.9356pt>
+[22 <./img/energy_conservation.png>]
+<./img/fl_fk_causing_spikes.png, id=474, 1387.584pt x 742.9356pt>
 File: ./img/fl_fk_causing_spikes.png Graphic file (type png)
 <use ./img/fl_fk_causing_spikes.png>
-Package pdftex.def Info: ./img/fl_fk_causing_spikes.png  used on input line 171
+Package pdftex.def Info: ./img/fl_fk_causing_spikes.png  used on input line 172
 .
 (pdftex.def)             Requested size: 483.69684pt x 258.97708pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 172.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 173.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 173.
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--173
+Underfull \hbox (badness 10000) in paragraph at lines 165--175
 
  []
 
-<./img/norm_qm_spikes.png, id=540, 1387.584pt x 742.9356pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./img/norm_qm_spikes.png, id=475, 1387.584pt x 742.9356pt>
 File: ./img/norm_qm_spikes.png Graphic file (type png)
 <use ./img/norm_qm_spikes.png>
-Package pdftex.def Info: ./img/norm_qm_spikes.png  used on input line 176.
+Package pdftex.def Info: ./img/norm_qm_spikes.png  used on input line 177.
 (pdftex.def)             Requested size: 483.69684pt x 258.97708pt.
-[28 <./img/fl_fk_causing_spikes.png>]
-Underfull \vbox (badness 3291) has occurred while \output is active []
 
- [29 <./img/norm_qm_spikes.png>]
-<./img/Equation_S26/Coup=10meV_Tanh_width=0x0001.png, id=556, 1259.6661pt x 681
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+[24 <./img/fl_fk_causing_spikes.png> <./img/norm_qm_spikes.png>]
+<./img/ManyScaling_NormDriftBetterVersion.png, id=489, 1387.584pt x 742.9356pt>
+
+File: ./img/ManyScaling_NormDriftBetterVersion.png Graphic file (type png)
+<use ./img/ManyScaling_NormDriftBetterVersion.png>
+Package pdftex.def Info: ./img/ManyScaling_NormDriftBetterVersion.png  used on 
+input line 188.
+(pdftex.def)             Requested size: 483.69684pt x 258.97708pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+
+ []
+
+[25 <./img/ManyScaling_NormDriftBetterVersion.png>]
+<./img/Equation_S26/Coup=10meV_Tanh_width=0x0001.png, id=501, 1259.6661pt x 681
 .5061pt>
 File: ./img/Equation_S26/Coup=10meV_Tanh_width=0x0001.png Graphic file (type pn
 g)
 <use ./img/Equation_S26/Coup=10meV_Tanh_width=0x0001.png>
 Package pdftex.def Info: ./img/Equation_S26/Coup=10meV_Tanh_width=0x0001.png  u
-sed on input line 200.
+sed on input line 201.
 (pdftex.def)             Requested size: 483.69684pt x 261.68913pt.
- [30 <./img/Equation_S26/Coup=10meV_Tanh_width=0x0001.png>])
+ [26 <./img/Equation_S26/Coup=10meV_Tanh_width=0x0001.png>])
 \openout2 = `Conclusions.aux'.
 
  (./Conclusions.tex
@@ -1293,43 +1269,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--103
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31
+ [27
 
 
 
 ]
-[32]
+[28]
 \openout2 = `Appendices.aux'.
 
  (./Appendices.tex
 Appendix A.
 
-LaTeX Warning: Reference `eq:adiab_elec' on page 33 undefined on input line 94.
+LaTeX Warning: Reference `eq:adiab_elec' on page 29 undefined on input line 94.
 
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33
+ [29
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
-[35]
+ [30]
+[31]
 Appendix B.
-) [36
+) [32
 
-] (./Main.bbl [37
+] (./Main.bbl [33
 
 
-]
+] [34] [35]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [38] [39] [40] [41])
+ [36] [37])
 
 Package nag Warning: Package times is obsolete.
 (nag)                Use the mathptmx, helvet (option scaled=.9), courier packa
@@ -1339,14 +1315,14 @@ ges instead.
 Package nag Warning: 2 complaints in total.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
-[42]
+[38]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
  (./Main.aux (./Preamble.aux) (./Introduction.aux) (./Chapter2.aux)
 (./Chapter3.aux) (./Conclusions.aux) (./Appendices.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: D5D2A532E8B0DB8AAB05CCC73865C94A;2590.
+(rerunfilecheck)             Checksum: 0B5F5C34DB1D5171B2BD90A09ADC94DD;2441.
 
 
 LaTeX Warning: There were undefined references.
@@ -1356,13 +1332,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18213 strings out of 492982
- 316269 string characters out of 6134897
- 390182 words of memory out of 5000000
- 21329 multiletter control sequences out of 15000+600000
- 594441 words of font info for 153 fonts, out of 8000000 for 9000
+ 18153 strings out of 492982
+ 315215 string characters out of 6134897
+ 388227 words of memory out of 5000000
+ 21284 multiletter control sequences out of 15000+600000
+ 584407 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,17n,45p,10376b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,17n,45p,10376b,623s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1375,10 +1351,10 @@ e/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on Main.pdf (42 pages, 1399312 bytes).
+Output written on Main.pdf (38 pages, 1074294 bytes).
 PDF statistics:
- 703 PDF objects out of 1000 (max. 8388607)
- 614 compressed objects within 7 object streams
- 169 named destinations out of 1000 (max. 500000)
- 352 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 649 PDF objects out of 1000 (max. 8388607)
+ 569 compressed objects within 6 object streams
+ 157 named destinations out of 1000 (max. 500000)
+ 331 words of extra memory for PDF output out of 10000 (max. 10000000)
 

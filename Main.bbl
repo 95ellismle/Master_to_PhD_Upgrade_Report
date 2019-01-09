@@ -67,67 +67,6 @@ Harald Oberhofer, Karsten Reuter, and Jochen Blumberger.
   {Computational} {Methods}.
 \newblock {\em Chem. Rev.}, 117(15):10319--10357, August 2017.
 
-\bibitem{AshcroftNeilW1976Ssp}
-Neil~W Ashcroft.
-\newblock {\em Solid state physics}.
-\newblock Saunders College Publishing, Fort Worth, college ed. edition, 1976.
-
-\bibitem{KittelCharles1996Itss}
-Charles Kittel.
-\newblock {\em Introduction to solid state physics}.
-\newblock Wiley, New York, 7th ed edition, 1996.
-
-\bibitem{Habgood2011May}
-Matthew Habgood, Ricardo Grau-Crespo, and Sarah~L. Price.
-\newblock {Substitutional and orientational disorder in organic crystals: a
-  symmetry-adapted ensemble model}.
-\newblock {\em PCCP}, 13(20):9590--9600, May 2011.
-
-\bibitem{Vehoff2010Aug}
-Thorsten Vehoff, Bj{\ifmmode\ddot{o}\else\"{o}\fi}rn Baumeier, Alessandro
-  Troisi, and Denis Andrienko.
-\newblock {Charge Transport in Organic Crystals: Role of Disorder and
-  Topological Connectivity}.
-\newblock {\em J. Am. Chem. Soc.}, 132(33):11702--11708, Aug 2010.
-
-\bibitem{Gajdos2013Mar}
-Fruzsina Gajdos, Harald Oberhofer, Michel Dupuis, and Jochen Blumberger.
-\newblock {On the Inapplicability of Electron-Hopping Models for the Organic
-  Semiconductor Phenyl-C61-butyric Acid Methyl Ester (PCBM)}.
-\newblock {\em J. Phys. Chem. Lett.}, 4(6):1012--1017, Mar 2013.
-
-\bibitem{Marcus1985Aug}
-R.~A. Marcus and Norman Sutin.
-\newblock {Electron transfers in chemistry and biology}.
-\newblock {\em Biochimica et Biophysica Acta (BBA) - Reviews on Bioenergetics},
-  811(3):265--322, Aug 1985.
-
-\bibitem{spencer_fob-sh:_2016}
-J.~Spencer, F.~Gajdos, and J.~Blumberger.
-\newblock {FOB}-{SH}: {Fragment} orbital-based surface hopping for charge
-  carrier transport in organic and biological molecules and materials.
-\newblock {\em The Journal of Chemical Physics}, 145(6):064102, August 2016.
-
-\bibitem{spencer_confronting_2016}
-Jacob Spencer, Laura Scalfi, Antoine Carof, and Jochen Blumberger.
-\newblock Confronting surface hopping molecular dynamics with {Marcus} theory
-  for a molecular donor–acceptor system.
-\newblock {\em Faraday Discussions}, 195:215--236, 2016.
-
-\bibitem{gajdos_ultrafast_2014}
-Fruzsina Gajdos, Siim Valner, Felix Hoffmann, Jacob Spencer, Marian Breuer,
-  Adam Kubas, Michel Dupuis, and Jochen Blumberger.
-\newblock Ultrafast {Estimation} of {Electronic} {Couplings} for {Electron}
-  {Transfer} between pi-{Conjugated} {Organic} {Molecules}.
-\newblock {\em Journal of Chemical Theory and Computation}, 10(10):4653--4660,
-  October 2014.
-
-\bibitem{Gershenson2006Sep}
-M.~E. Gershenson, V.~Podzorov, and A.~F. Morpurgo.
-\newblock {Colloquium: Electronic transport in single-crystal organic
-  transistors}.
-\newblock {\em Rev. Mod. Phys.}, 78(3):973--989, Sep 2006.
-
 \bibitem{john_c._tully_nonadiabatic_nodate}
 John~C. Tully.
 \newblock Nonadiabatic {Dynamics}.
@@ -150,6 +89,11 @@ John~C. Tully.
 \newblock Nonadiabatic molecular dynamics.
 \newblock {\em International Journal of Quantum Chemistry}, 40(S25):299--309,
   1991.
+
+\bibitem{Kapral1999May}
+Raymond Kapral and Giovanni Ciccotti.
+\newblock {Mixed quantum-classical dynamics}.
+\newblock {\em J. Chem. Phys.}, 110(18):8919--8929, May 1999.
 
 \bibitem{Martnnez*2005Oct}
 Todd~J. Mart{\ifmmode\acute{\imath}\else\'{\i}\fi}nez{$\ast$}.
@@ -210,6 +154,20 @@ Ali Abedi, Federica Agostini, Yasumitsu Suzuki, and E.~K.~U. Gross.
   the {Exact} {Time}-{Dependent} {Potential} {Energy} {Surface}.
 \newblock {\em Physical Review Letters}, 110(26), June 2013.
 
+\bibitem{gajdos_ultrafast_2014}
+Fruzsina Gajdos, Siim Valner, Felix Hoffmann, Jacob Spencer, Marian Breuer,
+  Adam Kubas, Michel Dupuis, and Jochen Blumberger.
+\newblock Ultrafast {Estimation} of {Electronic} {Couplings} for {Electron}
+  {Transfer} between pi-{Conjugated} {Organic} {Molecules}.
+\newblock {\em Journal of Chemical Theory and Computation}, 10(10):4653--4660,
+  October 2014.
+
+\bibitem{spencer_fob-sh:_2016}
+J.~Spencer, F.~Gajdos, and J.~Blumberger.
+\newblock {FOB}-{SH}: {Fragment} orbital-based surface hopping for charge
+  carrier transport in organic and biological molecules and materials.
+\newblock {\em The Journal of Chemical Physics}, 145(6):064102, August 2016.
+
 \bibitem{Prezhdo1997Oct}
 Oleg~V. Prezhdo and Peter~J. Rossky.
 \newblock {Evaluation of quantum transition rates from quantum-classical
@@ -260,6 +218,24 @@ Antoine Carof, Samuele Giannini, and Jochen Blumberger.
 \newblock Detailed balance, internal consistency, and energy conservation in
   fragment orbital-based surface hopping.
 \newblock {\em The Journal of Chemical Physics}, 147(21):214113, December 2017.
+
+\bibitem{Gajdos2013Mar}
+Fruzsina Gajdos, Harald Oberhofer, Michel Dupuis, and Jochen Blumberger.
+\newblock {On the Inapplicability of Electron-Hopping Models for the Organic
+  Semiconductor Phenyl-C61-butyric Acid Methyl Ester (PCBM)}.
+\newblock {\em J. Phys. Chem. Lett.}, 4(6):1012--1017, Mar 2013.
+
+\bibitem{spencer_confronting_2016}
+Jacob Spencer, Laura Scalfi, Antoine Carof, and Jochen Blumberger.
+\newblock Confronting surface hopping molecular dynamics with {Marcus} theory
+  for a molecular donor–acceptor system.
+\newblock {\em Faraday Discussions}, 195:215--236, 2016.
+
+\bibitem{gossel_coupled-trajectory_2018}
+Graeme~H. Gossel, Federica Agostini, and Neepa~T. Maitra.
+\newblock Coupled-{Trajectory} {Mixed} {Quantum}-{Classical} {Algorithm}: {A}
+  {Deconstruction}.
+\newblock {\em Journal of Chemical Theory and Computation}, August 2018.
 
 \bibitem{agostini_exact_2015}
 Federica Agostini, Ali Abedi, Yasumitsu Suzuki, Seung~Kyu Min, Neepa~T. Maitra,
@@ -312,12 +288,6 @@ Arne Scherrer, Federica Agostini, Daniel Sebastiani, E.~K.~U. Gross, and
   electron-nuclear wave function}.
 \newblock {\em J. Chem. Phys.}, 143(7):074106, Aug 2015.
 
-\bibitem{gossel_coupled-trajectory_2018}
-Graeme~H. Gossel, Federica Agostini, and Neepa~T. Maitra.
-\newblock Coupled-{Trajectory} {Mixed} {Quantum}-{Classical} {Algorithm}: {A}
-  {Deconstruction}.
-\newblock {\em Journal of Chemical Theory and Computation}, August 2018.
-
 \bibitem{CP2K}
 J.~VandeVondele, J;~Hutter.
 \newblock Gaussian basis sets for accurate calculations on molecular systems in
@@ -335,5 +305,13 @@ Seung~Kyu Min, Federica Agostini, Ivano Tavernelli, and E.~K.~U. Gross.
 John~C. Tully.
 \newblock Nonadiabatic {Dynamics}.
 \newblock pages 34--71, 1998.
+
+\bibitem{cattarius_all_2001}
+Chr. Cattarius, G.~A. Worth, H.-D. Meyer, and L.~S. Cederbaum.
+\newblock All mode dynamics at the conical intersection of an octa-atomic
+  molecule: {Multi}-configuration time-dependent {Hartree} ({MCTDH})
+  investigation on the butatriene cation.
+\newblock {\em The Journal of Chemical Physics}, 115(5):2088--2100, August
+  2001.
 
 \end{thebibliography}

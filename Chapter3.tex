@@ -9,7 +9,7 @@ CTMQC comes from taking the semi-classical limit of an exact factorisation of th
  \Psi(\textbf{R}, \textbf{r}, t) = \Phi_{\textbf{R}}(\textbf{r}, t) \chi(\textbf{R}, t)
  \label{eq:exact_fact}
  \end{equation}
-In the above equation (and throughout this report) I will denote nuclear coordinates and electronic coordinates $R$ and $r$ respectively. The nuclear and electronic wavefunctions then obey separate, but coupled, time-dependent schr\"odinger equations for spatial and temporal evolution. This representation has proven to be useful in furthering understanding through exact solutions of small toy-model systems (need ref \footnote{see deconstruction paper}). However, in this report I will be focussing on the semi-classical limit of these equations (CTMQC) and give some early results of a combination of this and the AOM method explained previously in section \ref{chap:FOB}.
+In the above equation (and throughout this report) I will denote nuclear coordinates and electronic coordinates $R$ and $r$ respectively. The nuclear and electronic wavefunctions then obey separate, but coupled, time-dependent schr\"odinger equations for spatial and temporal evolution. This representation has proven to be useful in furthering understanding through exact solutions of small toy-model systems \cite{agostini_quantum-classical_2016, gossel_coupled-trajectory_2018}. However, in this report I will be focussing on the semi-classical limit of these equations (CTMQC) and give some early results of a combination of this and the AOM method explained previously in section \ref{chap:FOB}.
 The equations for the evolution of the electronic and nuclear wavefunctions in the exact factorisation \cite{abedi_exact_2010} are given below:
 \begin{align}
   i\hbar \frac{\delta}{\delta t} \Phi_{\textbf{R}}(\textbf{r}, t) &= \left( \hat{H}_{BO} + \hat{U}_{en}\left[ \Phi_{\textbf{R}}, \chi\right] - \epsilon(\textbf{R}, t) \right) \Phi_{\textbf{R}} (\textbf{r}, t)
@@ -27,8 +27,9 @@ The $\hat{U}_{en}$ is an electronic-nuclear coupling operator (ENCO). This is de
 \\
 Where the $\textbf{A}_{\nu}$ is a time-dependent vector potential (TDVP), given by $\left\langle \Phi_{\textbf{R}}(t) \right\vert \left. - i \hbar \nabla_{\nu} \Phi_{\textbf{R}} \right\rangle_{\textbf{r}}$ and $M_{\nu}$ is the mass of nuclei $\nu$.
 Finally $\epsilon(\textbf{R}, t)$ is a time-dependent scalar potential energy surface (TDPES), given by $\langle \Phi_{\textbf{R}}(t) \vert \hat{H}_{BO} + \hat{U}_{en}^{coup} - i\hbar \frac{\delta}{\delta t} \vert \Phi_{\textbf{R}}(t) \rangle_{\textbf{r}}$.
-\begin{wrapfigure}[13]{r}{0.45 \textwidth}
-  \includegraphics[width=0.7\textwidth]{./img/nuclear_splitting_TDPES.png}
+\\
+\begin{wrapfigure}{r}{0.5 \textwidth}
+  \includegraphics[width=0.5\textwidth]{./img/nuclear_splitting_TDPES.png}
   \caption{A demonstration of how the TDPES can cause the splitting of the nuclear wavepacket in non-adiabatic regions. The red line represents the TDPES and the blue is the nuclear density. Adapted from \cite{agostini_exact_2015} \label{fig:step_TDPES}}
 \end{wrapfigure}
 \\
@@ -140,55 +141,55 @@ Where $\sigma_{\nu'}^{(J)}(t)$ is a width parameter for the width of the gaussia
 Where the bold notation for vectors has been replaced by normal font indicating that this applies to each cartesian dimension independently. Further, in this expression $R_{lk, \nu}$ is anti-symmetric, $R_{lk} = R_{kl}$ meaning that $Q_{lk} = Q_{kl}$. At first sight the $R_{lk}$ term seems to be another weighted average. However, this isn't quite the case as the denominator can have negative terms. This causes equation \eqref{eq:Rlk} to be very sensitive to errors in the calculation of the denominator of this fraction. Any inaccuracies can lead to the denominator approaching zero faster than the numerator causing large spikes in the quantum momentum term.
 
 \section{Testing my Implementation}
-I have implemented a serial version of this algorithm in the CP2K software package \cite{CP2K}. As well as many numerical tests on individual terms in the equations, I have implemented some physical tests too. In this section I will outline some of the key physical tests I have performed on both the Ehrenfest part of the equations and the full CTMQC equations.
+I have implemented a serial version of this algorithm in the CP2K software package \cite{CP2K}. As well as many numerical tests on individual terms in the equations, I have implemented some physical tests too. In this section I will outline some of the key tests I have performed on both the Ehrenfest part of the equations and the full CTMQC equations.
 \subsection{Rabi Oscillation}
-Rabi Oscillation can be shown to occur in systems that have fixed nuclear geometries (see section \ref{ap:Rabi}). This can be used to check the electronic propagation, which is carried out using a fourth order Runge-Kutta algorithm. In this test I propagated the system with the Ehrenfest method and set velocities to zero, thus freezing the positions of the nuclei. I compared this to this to the analytically calculated coefficients using python and the Rabi Oscillation formula. The results are shown below in figure \ref{fig:Rabi}.
+Rabi Oscillation can be shown to occur in systems that have fixed nuclear geometries (see section \ref{ap:Rabi}). During Rabi oscillation the electronic dynamics are given by an analytic formula. This can be solved in Python and used to test the implementation of the electonic propagation, decoupled from nuclear dynamics. In this test Ehrenfest was used to propagate the system, which consisted of a trimer of an Ethylene-like molecule with 10 replicas. Each of the replicas were initialised with different positions. The electronic propagation of Ehrenfest is the same as that of trajectory surface hopping so I have adapted a previously implemented subroutine from the FOB-SH method \cite{spencer_fob-sh:_2016} to work for many replicas. The results are shown in figure \ref{fig:Rabi}.
 \begin{figure}[H]
-  \includegraphics[height=0.5\textheight]{./img/Rabi_Oscillation_trimer.png}
-  \caption{\label{fig:Rabi}Rabi Oscillations occuring in a trimer of Ethylene-like molecules. Dots indicate the coefficient calculated by python according to the Rabi formula. Lines indicate the CP2K output. The different colours represent different diabatic states.}
+  \includegraphics[width=\textwidth]{./img/3_reps_RABI.png}
+  \caption{\label{fig:Rabi}Rabi oscillation for a trimer of Ethylene, results shown for 3 replicas. Solid lines indicate the output of the CP2K propagation and dots indicate the result of the analytic Rabi formula. Different colors indicate different states. The cyan line shows the sum of the diabatic populations i.e. the norm.}
 \end{figure}
-\noindent We can see in figure \ref{fig:Rabi} CP2K gives the same output as the analytic result, meaning the Runge-Kutta method is working. The cyan line shows us the norm is preserved in this system.
+\noindent We can see in figure \ref{fig:Rabi} CP2K gives the same output as the analytic result. This means for Ehrenfest the electronic propagation is working as expected. Molecules in replica 1 were initialised further apart than those of replica 2 and replica 3, with replica 3 having the closest molecules. We can see that the frequency of oscillation of charge between molecules that are further apart is slower. Something we would expect to see in a realistic system. Further the new implementation of multiple replicas can be seen to work with all replicas give correct results.
 \\
 \subsection{Energy Conservation}
-Ehrenfest can be shown to conserve the potential energy + total kinetic energy \cite{john_c._tully_nonadiabatic_1998}. The potential energy is given by the effective potential (i.e. $\sum_{l} \vert C_{l}^{(I)} \vert^2 \epsilon_{l}$) and the total kinetic energy is given as a sum of the kinetic energy over all atoms. In this test the commutator term was neglected from equation \eqref{eq:diab_force}. 8 simulations were performed. These used the same initial conditions but varied a random number generator seed, which is used in the calculation of the NACVs. In each simulation 100 replicas were used over various couplings and averaged to get the average energy drift per replica. The error bar was obtained from the average energy drifts of the 8 simulations.
-\begin{figure}
+The Ehrenfest equations can be shown to conserve the potential energy + total kinetic energy \cite{john_c._tully_nonadiabatic_1998}. The potential energy is given by the effective potential (i.e. $\sum_{l} \vert C_{l}^{(I)} \vert^2 \epsilon_{l}$) and the total kinetic energy is given as a sum of the kinetic energy over all atoms. In this test the commutator term was neglected from equation \eqref{eq:diab_force}. 8 simulations were performed. These used the same initial conditions but varied a random number generator seed, which is used in the calculation of the NACVs. In each simulation 100 replicas were used over various couplings and averaged to get the average energy drift per replica. The error bar was obtained from the average energy drifts of the 8 simulations.
+\begin{figure}[H]
   \includegraphics[width=\textwidth]{./img/energy_conservation.png}
   \caption{\label{fig:Ehren_Ener_Cons}Energy drift in Ehrenfest for various couplings. Each color represents a different nuclear time-step used in fs.}
 \end{figure}
-\\\\
 We can see that the energy is conserved very well for low couplings and starts to increase for higher ones. The exact reason for this is not known. It may be due to the fact the the effective potential energy surface is a population weighted average. If the energies are closer together around the crossing region (as in lower coupling systems) then this average becomes a better representation of the true potential. When the states are further apart the average becomes more of an approximation. From this graph a time-step of 0.1fs was chosen as a compromise between accuracy and computational cost.
-
+\\
 \subsection{Norm Conservation}
-The norm of the coefficients should be conserved when propagating the equations. To not do so would mean that the total number of charge carrier is changing, i.e. electrons/holes being destroyed or created. Both the CTMQC and Ehrenfest electronic equations can be shown to conserve the norm (see appendix \ref{ap:Norm_Pres}). This is very well conserved in Ehrenfest, with norm drifts (using a nuclear time-step of 0.1fs) of the order $10^{-10}$ ps$^{-1}$. However, in CTMQC the story is slightly different.
+The norm of the coefficients should be conserved when propagating the equations. To not do so would mean that the total number of charge carriers is changing, i.e. electrons/holes being destroyed or created. Both the CTMQC and Ehrenfest electronic equations can be shown to conserve the norm (see appendix \ref{ap:Norm_Pres}). When propagating Ehrenfest dynamics this is very well conserved, with norm drifts (using a nuclear time-step of 0.1fs) on the order $10^{-10}$ ps$^{-1}$. However, in CTMQC the story is slightly different.
 \\\\
-The quantum momentum appears in both the nuclear force equation and the electronic equation. However, its current formulation using Gaussian distributions to model the nuclear density results in equation \eqref{eq:QM_lin}. That is $Q_{lk,\nu}^{(I)} = \alpha_{\nu}^{(I)}\textbf{R}^{(I)}_\nu - \textbf{R}^{(I)}_{lk, \nu}$. Where the $\textbf{R}^{(I)}_{lk, \nu}$ term is calculated via equation \eqref{eq:Rlk}. This is given again below in a condensed form:
+The quantum momentum appears in both the nuclear force equation and the electronic equation. However, its current formulation using Gaussian distributions to model the nuclear density results in equation \eqref{eq:QM_lin}. That is $\mathcal{Q}_{lk,\nu}^{(I)} = \alpha_{\nu}^{(I)}\textbf{R}^{(I)}_\nu - \textbf{R}^{(I)}_{lk, \nu}$. Where the $\textbf{R}^{(I)}_{lk, \nu}$ term is calculated via equation \eqref{eq:Rlk}. This is given again below in a condensed form:
 \[\textbf{R}_{lk, \nu} = \sum_{I}^{N_{tr}} R_{\nu}^{(I)}(t) \alpha_{\nu}^{(I)}(t) \frac{\textbf{Y}^{(I)}_{lk, \nu}(t)}{\sum_{J} \textbf{Y}^{(I)}_{lk, \nu}(t)} \]
 \\
 Where $\textbf{Y}^{(I)}_{lk, \nu} = |C_{k}^{(J)}(t)|^2 |C_{l}^{(J)}(t)|^2 \left( \textbf{f}_{k, \nu}^{(J)}(t) - \textbf{f}_{l, \nu}^{(J)}(t) \right)$.
 \\\\
-However, the $\textbf{Y}^{(I)}_{lk, \nu}$ can be both negative and positive so after summing $\textbf{Y}^{(I)}_{lk, \nu}$ over all replicas the denominator can approach zero. Any small inaccuracies in the propagation will result in large spikes in this term, thus causing bad norm conservation and unphysical data. A demonstration of this can be seen below.
-\begin{figure}[H]
+Due to the fact that $\textbf{Y}^{(I)}_{lk, \nu}$ can be both negative and positive, the denominator of the $\textbf{R}_{lk, \nu}$ equation can approach zero. Large spikes in the $\textbf{R}_{lk, \nu}$ will be seen if this term approaches zero faster than the numerator. This can cause large spikes in the $\mathcal{Q}_{lk,\nu}^{(I)}$ resulting in an amplification of any innaccuracies in the $\textbf{Y}^{(I)}_{lk, \nu}$ term. In my simulations this has resulted in a very bad conservation of the norm. A demonstration of this can be seen below in figure \ref{fig:flk_causing_spikes}.
+This shows that the denominator of the $\textbf{R}^{(I)}_{lk, \nu}$ term approaching zero can cause spikes in the quantum momentum. These spike in the quantum momentum can affect the nuclear and electronic propagation. One way this manifests itself is in bad norm conservation. This is shown in figure \ref{fig:norm_spikes} below, where the large spike in the quantum momentum appears as a discontinuity in the norm.
+\begin{figure}[h]
   \includegraphics[width=\textwidth]{./img/fl_fk_causing_spikes.png}
   \caption{\label{fig:flk_causing_spikes} A time-series plot of the denominator in the $\textbf{R}_{lk,\nu}$ equation (bottom graph) and the quantum momentum term between states 1 \& 2 on atom 1 for replica 1 (top graph). Each colour represents a different cartesian component.}
 \end{figure}
-\noindent In figure \ref{fig:flk_causing_spikes} when the bottom part of the fraction approaches zero there is a spike in the quantum momentum. This spike in the quantum momentum then affects the nuclear and electronic propagation. One way this manifests itself is in bad norm conservation. This is shown in figure below (\ref{fig:norm_spikes})
+\vfill
 \begin{figure}[H]
   \includegraphics[width=\textwidth]{./img/norm_qm_spikes.png}
-  \caption{\label{fig:norm_spikes} A time-series plot of the modulus of the quantum momentum between states 1 \& 2 on atom 1 for replica 1 (bottom graph) and the norm of the diabatic expansion coefficients (top graph). }
+  \caption{\label{fig:norm_spikes} A time-series plot of the squared magnitude of the quantum momentum between states 1 \& 2 on atom 1 for replica 1 (bottom graph) and the norm of the diabatic expansion coefficients (top graph). }
 \end{figure}
-\noindent In an attempt to counter this problem a smoothing function has been implemented in the calculation of the $R_{lk, \nu}$ term. This takes the shape of a tanh()$^2$ function, that is:
+\newpage
+\noindent In an attempt to counter this problem a smoothing function has been implemented in the calculation of the $R_{lk, \nu}$ term. This takes the shape of a tanh($\frac{a}{x}$)$^2$ function, that is:
 \begin{equation}
-  \textbf{R}_{lk, \nu} = \sum_{I}^{N_{tr}} R_{\nu}^{(I)}(t) \alpha_{\nu}^{(I)}(t) \tanh\left(\frac{\sum_{J} \textbf{Y}^{(I)}_{lk, \nu}(t)}{W}\right)^2 \frac{\textbf{Y}^{(I)}_{lk, \nu}(t)}{\sum_{J} \textbf{Y}^{(I)}_{lk, \nu}(t)}
+  \textbf{R}_{lk, \nu} = \sum_{I}^{N_{tr}} R_{\nu}^{(I)}(t) \alpha_{\nu}^{(I)}(t)  \frac{\textbf{Y}^{(I)}_{lk, \nu}(t)}{\sum_{J} \textbf{Y}^{(I)}_{lk, \nu}(t)} \ \ \underbrace{\tanh\left(\frac{\sum_{J} \textbf{Y}^{(I)}_{lk, \nu}(t)}{W}\right)^2}_{\text{smoothing parameter}}
   \label{eq:tanh_smooth}
 \end{equation}
-By altering the `width' parameter, W, one can set the level of smoothing of the spikes in the quantum momentum term. Lower widths result in less smoothing. After investigating various widths for various couplings a default width of 0.001 au$_f$ has been chosen.
-This seems to provide a good balance between a norm conservation and physical dynamics. A width that is too high would result in a very low/neglible $\textbf{R}_{lk,\nu}$ term. A very low width would result in very little smoothing and bad norm conservation. This parameter is something that should be monitored when working with different systems.
-Using the tanh smoothing improves the conservation of the norm by orders of magnitude and prevents the code from crashing.
-
-% \subsection{Zero NACE results in no population transfer}
-% As stated in section \ref{sec:calc_QM} there should be no population transfer when there is zero couping between electronic states. In the diabatic basis this means the diabatic NACE and the off-diagonal elements ($H_{ab}$) are both zero. This can be set in the code and should in the coefficients remaining constant. However, the BLAS subroutine I am using to determine the adiabatic-diabatic transformation matrix orders the Hamiltonian's eigenvectors (columns of the transformation matrix) by eigenvalue. This can be seen to result in an instantaneous adiabatic population transfer in the Marcus parabolas in figure \ref{fig:diab_wells}.
-
-
+By altering the `width' parameter, W, one can set the level of smoothing of the spikes in the quantum momentum term. As this width approaches 0, or as the $\textbf{Y}^{(I)}_{lk, \nu}(t)$ term approaches $\infty$ the standard expression for the $\textbf{R}_{lk, \nu}$ term is retrieved. When the value inside the tanh expression is larger than $\sim 3$ the smoothing term has a very small effect. This means this parameter will only alter the calculation of the quantum momentum if the $\textbf{Y}^{(I)}_{lk, \nu}(t)$ term (the denominator of $\textbf{R}_{lk, \nu}$) is smaller than some width, W, divided by 3. The results of the implementation of this is shown below in figure \ref{fig:tanh_result}.
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{./img/ManyScaling_NormDriftBetterVersion.png}
+  \caption{\label{fig:tanh_result} A figure showing the change in the norm conservation with a varying tanh width for 3 different electronic couplings, 100 meV (top), 10 meV (middle) 1 meV (bottom).}
+\end{figure}
+\noindent An improvement spanning several orders of magnitude can be seen in figure \ref{fig:tanh_result} for all couplings. However, there is still room for improvement, especially in the higher 2 couplings. Renormalisation at each time-step is necessary to correct small average errors, a more eleborate scheme with a dynamic smoothing width may be required for larger more complex systems.
+\\
 \subsection{Time-Derivative of the Sum Over Trajectories of Adiabatic Populations}
 In the supplementary information of Min, 17 \cite{min_ab_2017} a further condition was imposed when deriving the equation for the Quantum Momentum (equation S26). This is given below:
 \begin{equation}
