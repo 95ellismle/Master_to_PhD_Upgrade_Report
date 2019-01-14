@@ -22,7 +22,7 @@ Where $\langle p_{\pi, i} |$ represents the optimised Slater p-orbital and the $
 \begin{equation}
   \nabla_{\nu} H_{kl}^{'} = C \ \nabla_{\nu} S_{kl}^{'} = C \ \nabla_{\nu} \langle \varphi_{k} | \varphi_{l} \rangle = C ( \textbf{d}_{\nu, lk}^{'*} + \textbf{d}_{\nu, kl}^{'} )
 \end{equation}
-Where we have defined the non-adiabatic coupling vectors (in a non-orthogonal diabtic basis) as $\textbf{d}^{'}_{\nu, lk} = \langle \varphi_{l}  | \nabla_{\nu} \varphi_{k}\rangle$. The $H^{'}_{kl}$ term is the Hamiltonian in the non-orthogonal diabatic basis. The NACVs are calculated via a fintie difference method.
+Where we have defined the non-adiabatic coupling vectors (in a non-orthogonal diabtic basis) as $\textbf{d}^{'}_{\nu, lk} = \langle \varphi_{l}  | \nabla_{\nu} \varphi_{k}\rangle$. The $H^{'}_{kl}$ term is the Hamiltonian in the non-orthogonal diabatic basis. The NACVs are calculated via a finite difference method.
 
 \section{Different Bases}
 The definitions in the previous section giving the key points in the AOM method were all expressed in a non-orthogonal diabatic basis. However, the electronic propagation in the FOB method is done in an orthogonal diabatic basis denoted $\phi_{l}$. Further the CTMQC equations have been derived and are expressed in the adiabtic basis, $\psi_{l}$. Therefore, it is important to define the transformations between the 3 bases used in the code.
@@ -49,7 +49,7 @@ The unitary transformation matrix is given as the overlap between diabatic and a
   \label{eq:diab_to_adiab}
 \end{equation}
 \\\\
-To trasform from the non-orthogonal to orthogonal basis we need a new matrix. This is given by:
+To transform from the non-orthogonal to orthogonal basis we need a new matrix. This is given by:
 \begin{equation}
   \vec{\phi} = \mathbb{T} \vec{\varphi}
   \label{eq:orth_to_nonorth}

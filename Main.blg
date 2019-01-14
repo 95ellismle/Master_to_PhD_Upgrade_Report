@@ -4,57 +4,57 @@ The top-level auxiliary file: Main.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: Preamble.aux
 A level-1 auxiliary file: Introduction.aux
-A level-1 auxiliary file: Chapter2.aux
 A level-1 auxiliary file: Chapter3.aux
 A level-1 auxiliary file: Conclusions.aux
 A level-1 auxiliary file: Appendices.aux
+A level-1 auxiliary file: Chapter2.aux
 Database file #1: mybib.bib
 Warning--entry type for "Curchod2011Feb" isn't style-file defined
---line 333 of file mybib.bib
+--line 473 of file mybib.bib
 Warning--empty journal in john_c._tully_nonadiabatic_nodate
 Warning--empty year in john_c._tully_nonadiabatic_nodate
 Warning--empty year in Whetten85
 Warning--empty year in CP2K
 Warning--empty journal in john_c._tully_nonadiabatic_1998
-You've used 50 entries,
+You've used 59 entries,
             1791 wiz_defined-function locations,
-            792 strings with 14177 characters,
-and the built_in function-call counts, 12334 in all, are:
-= -- 1082
-> -- 578
+            854 strings with 15638 characters,
+and the built_in function-call counts, 14480 in all, are:
+= -- 1283
+> -- 654
 < -- 2
-+ -- 213
-- -- 163
-* -- 1094
-:= -- 1973
-add.period$ -- 148
-call.type$ -- 50
-change.case$ -- 50
++ -- 242
+- -- 183
+* -- 1286
+:= -- 2308
+add.period$ -- 175
+call.type$ -- 59
+change.case$ -- 59
 chr.to.int$ -- 0
-cite$ -- 55
-duplicate$ -- 451
-empty$ -- 1163
-format.name$ -- 163
-if$ -- 2621
+cite$ -- 64
+duplicate$ -- 532
+empty$ -- 1378
+format.name$ -- 183
+if$ -- 3081
 int.to.chr$ -- 0
-int.to.str$ -- 50
-missing$ -- 48
-newline$ -- 251
-num.names$ -- 49
-pop$ -- 78
+int.to.str$ -- 59
+missing$ -- 57
+newline$ -- 296
+num.names$ -- 58
+pop$ -- 87
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 183
+skip$ -- 214
 stack$ -- 0
-substring$ -- 1084
-swap$ -- 62
+substring$ -- 1294
+swap$ -- 71
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 124
-width$ -- 52
-write$ -- 539
+while$ -- 148
+width$ -- 61
+write$ -- 638
 (There were 6 warnings)

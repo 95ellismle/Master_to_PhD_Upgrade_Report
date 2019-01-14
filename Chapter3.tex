@@ -4,7 +4,7 @@
 
 
 \section{Exact Factorisation}
-CTMQC comes from taking the semi-classical limit of an exact factorisation of the molecular wavefunction into its constituent electronic and nuclear components \cite{abedi_exact_2010}. Where the electronic component is parametrically dependent on the nuclear coordinates, $\textbf{R}$. This is shown below in eq \eqref{eq:exact_fact} where $\chi$ is the nuclear wavefunction and $\Phi$ is the electronic one.
+The exact factorisation of the molecular wavefunction \cite{abedi_exact_2010} is the root of the derivation of the CTMQC equations so it is useful to study this. Exact factorisation involves separating the total molecular wavefunction into a nuclear component and electronic component. Where the electronic component is parametrically dependent on the nuclear coordinates, $\textbf{R}$. This is shown below in eq \eqref{eq:exact_fact} where $\chi$ is the nuclear wavefunction and $\Phi$ is the electronic one.
 \begin{equation}
  \Psi(\textbf{R}, \textbf{r}, t) = \Phi_{\textbf{R}}(\textbf{r}, t) \chi(\textbf{R}, t)
  \label{eq:exact_fact}
@@ -18,7 +18,7 @@ The equations for the evolution of the electronic and nuclear wavefunctions in t
 i\hbar \frac{\delta}{\delta t} \chi (\textbf{R}, t) &= \left( \sum_{\nu = 1}^{N_{n}} \frac{[-i\hbar\nabla_{\nu} + \textbf{A}_{\nu}(\textbf{R}, t)]^2}{2 M_{\nu}} + \epsilon(\textbf{R}, t)\right) \chi (\textbf{R}, t)
   \label{eq:nuclear_exact}
 \end{align}
-Where $\hat{H}_{BO}$ is the Born-Oppenheimer Hamiltonian, that is $\hat{T}_{e} + \hat{W}_{ee} + \hat{W}_{nn} + \hat{V}_{en}$. Where $\hat{T}_{e}$ is the electronic kinetic energy operator, $\hat{W}_{ee/nn}$ is the electron-electron/nuclei-nuclei interation and $V_{en}$ is the electronic-nuclear potential.
+Where $\hat{H}_{BO}$ is the Born-Oppenheimer Hamiltonian, that is $\hat{T}_{e} + \hat{W}_{ee} + \hat{W}_{nn} + \hat{V}_{en}$. Where $\hat{T}_{e}$ is the electronic kinetic energy operator, $\hat{W}_{ee/nn}$ is the electron-electron/nuclei-nuclei interaction and $V_{en}$ is the electronic-nuclear potential.
 \\\\
 The $\hat{U}_{en}$ is an electronic-nuclear coupling operator (ENCO). This is defined as \begin{equation}
   \hat{U}_{en}[\Phi_{\textbf{R}}, \chi] = \sum_{\nu=1}^{N_{nuc}} \frac{1}{M_{\nu}} \left[ \frac{\left[-i \hbar \nabla_{\nu} - \textbf{A}_{\nu}(\textbf{R}, t) \right]^2}{2} + \left( \left. \left. \frac{-i\hbar \nabla_{\nu} \chi}{\chi} + \textbf{A}_{\nu}(\textbf{R, t})\right)\right( -i\hbar\nabla_{\nu} - \textbf{A}_{\nu}(\textbf{R}, t)\right) \right]
@@ -35,10 +35,10 @@ Finally $\epsilon(\textbf{R}, t)$ is a time-dependent scalar potential energy su
 \\
 The effects of the TDPES, TDVP and the ENCO have been investigated in multiple works \cite{agostini_semiclassical_2015, agostini_exact_2015, agostini_mixed_2013, abedi_dynamical_2013, Min2014Dec}. The TDPES and TDVP are both responsible for the evolution of the system
 \cite{agostini_semiclassical_2015}.  The TDPES provides exact classical forces on the nuclei. In fact, an alternative independent-trajectory semi-classical scheme has been investigated using these exact forces \cite{agostini_exact_2015}. This found the TDPES is responsible for the splitting of the nuclear wavepacket in regions of high non-adiabaticity by taking the shape of a step function between the 2 adiabatic potentials. This is demonstrated in figure \ref{fig:step_TDPES}. Finally the electronic-nuclear coupling operator (ENCO) is responsible for other non-adiabatic effects in the system such as electronic nonadiabtic transitions and decoherence \cite{agostini_semiclassical_2015}.
-\section{Approximations in CTMQC}
-Six approximations have been made in the derivation of CTMQC, these are discussed in detail in Ref. \cite{agostini_quantum-classical_2016}. In the interest of completeness I have summarised them below.
+\section{Approximations leading to CTMQC}
+Starting from the exact factorisation equations 6 approximations have been made to derive the CTMQC equations. These are discussed in detail in Ref. \cite{agostini_quantum-classical_2016}. In the interest of completeness I have summarised them below.
 \subsection{Classical Nuclei}
-Techniques that include nuclear quantum effects (NQEs); such as multiple spawning \cite{Martnnez*2005Oct}, ring-polymer surface hopping \cite{Shakib2017Jul} and nonadiabatic Bohmian dynamics \cite{Curchod2011Feb, Tavernelli2013Apr} although extremely accurate, cannot be applied to hundreds or thousands of molecules. This is due to their high computational cost. Further, in many systems of interest NQEs are negigible, especially at room temperature. For this reason the classical limit of the nuclear Schr\"odinger equation \eqref{eq:nuclear_exact} is taken when deriving the CTMQC equations.
+Techniques that include nuclear quantum effects (NQEs); such as multiple spawning \cite{Martnnez*2005Oct}, ring-polymer surface hopping \cite{Shakib2017Jul} and nonadiabatic Bohmian dynamics \cite{Curchod2011Feb, Tavernelli2013Apr} although extremely accurate, cannot be applied to hundreds or thousands of molecules. This is due to their high computational cost. Further, in many systems of interest NQEs are negligible, especially at room temperature. For this reason the classical limit of the nuclear Schr\"odinger equation \eqref{eq:nuclear_exact} is taken when deriving the CTMQC equations.
 \subsection{Neglect the ENCO in the TDPES}
 The electron-nuclei coupling operator is omitted in the expression for the time-dependent potential energy surface. This is justified as the first term ($\left[-i \hbar \nabla_{\nu} - \textbf{A}_{\nu}(\textbf{R}, t) \right]^2$) contains a second order derivative which is expensive to calculate and has a neglible effect compared to the second term in the ENCO \cite{Scherrer2015Aug}. However, the rest of the ENCO is equal to zero when averaged over $\Phi_{\textbf{R}}(\textbf{r},t)$ so it does not contribute to the TDPES.
 \subsection{Derivative of the Adiabatic Coefficients}
@@ -55,9 +55,10 @@ Where $\epsilon_{l}^{(I)}$ is the energy of the l$^{th}$ adiabatic potential ene
 \subsection{Gaussian Nuclear Wavepackets}
 In order to calculate the quantum momentum -the new term in CTMQC. Knowledge of the nuclear distribution is needed. To this end the nuclear wavepacket is assumed to take the shape of a Gaussian. This is centred on the atomic coordinate with a width $\sigma$. In this work I have used a constant width throughout, with plans to implement dynamic Gaussian width calculations later. However, the nuclei are still propagated classically, the width parameter is only used in the calculation of the quantum momentum.
 \subsection{Seperating the Effects of Decoherence and NACVs}
-So as to not introduce any population transfer (due to the quantum momentum) when the NACV is zero a fifth approximation has been introduced. Namely the quantum momentum depends on pairs of states -l,k. This enables the seperation of the `competing' effects of the NACV and the Quantum Momentum.
+So as to not introduce any population transfer (due to the quantum momentum) when the NACV is zero a fifth approximation has been introduced. Namely the quantum momentum depends on pairs of states -l,k. This enables the separation of the `competing' effects of the NACV and the Quantum Momentum.
 \section{The CTMQC equations}
-\subsection{Adiabatic Basis \label{sec:ad_eqns}}
+\subsection{Adiabatic Basis}
+\label{sec:ad_eqns}
 The equations for the propagation of the classical nuclei and the expansion coefficients in the CTMQC framework in the adiabatic basis are given below:
 \begin{dmath}
   \dot{\textbf{P}}_{\nu}^{(I)} =
@@ -84,7 +85,7 @@ The equations for the propagation of the classical nuclei and the expansion coef
   }_{\text{Quantum Momentum}}
   \label{eq:elec_adiab}
 \end{dmath}
-Where the $\epsilon_k$ term is the potential energy on the k$^{th}$ potential energy surface. $C_l$ is the adiabatic expansion coefficient corresponding to the l$^{th}$ state. The sum over k and l indicates a sum over all states, the (I) superscript is a replica index and the $\nu$ is an atom index. $M_{\nu}$ is the nuclear mass and $d_{lk}{^(I)}$ represents the non-adiabatic coupling element (in the adiabtic basis) between adiabatic states l and k, $\langle \psi_{l} \vert \frac{d}{dt}\psi_{k} \rangle$.
+Where the $\epsilon_k$ term is the potential energy on the k$^{th}$ potential energy surface. $C_l$ is the adiabatic expansion coefficient corresponding to the l$^{th}$ state. The sum over k and l indicates a sum over all states, the (I) superscript is a replica index and the $\nu$ is an atom index. $M_{\nu}$ is the nuclear mass and $d_{lk}{^(I)}$ represents the non-adiabatic coupling element (in the adiabatic basis) between adiabatic states l and k, $\langle \psi_{l} \vert \frac{d}{dt}\psi_{k} \rangle$.
 The 2 new terms in this scheme not seen in other one are the $\mathcal{Q}_{lk, \nu}^{(I)}$ and the $\textbf{f}_{k, \nu}^{(I)}$. These are the quantum momentum and the history dependent adiabatic force. The history dependent force in defined in equation \eqref{eq:hist_force} this keeps a record of the previous forces in the system. The quantum momentum term couples the trajectories together (making this a coupled-trajectory scheme). Together the history dependent force and quantum momentum are responsible for the decoherence in the `Quantum Momentum' parts of the
 above equations \cite{gossel_coupled-trajectory_2018}. Notably, although these equations have been derived from the exact factorisation equations separately from Ehrenfest they do contain exactly the Ehrenfest equations within them (marked `Ehrenfest'). This scheme can therefore be seen as an Ehrenfest scheme with a correction that captures branching of the nuclear wavefunction and decoherence within it.
 \\\\
@@ -92,7 +93,7 @@ We can also see in equation \eqref{eq:elec_adiab} if we are in a pure adiabatic 
 Therefore, the quantum momentum term can be seen to only kick in when there is a mixing of adiabatic states. In the adiabatic formulation of these equations it is the adiabatic NACV $\textbf{d}_{lk, \nu}^{ad, (I)}$ that is responsible for the initial mixing of the populations from pure adiabatic states.
 
 \subsection{Diabatic Basis}
-The equations above \eqref{eq:nuc_adiab} \& \eqref{eq:elec_adiab} are both in the adiabatic basis. However, to make use of the FOB-formalism detailed in section \ref{chap:FOB} already implemented in the CP2K software package \cite{CP2K} these need to be transformed to the orthogonal diabatic basis, $\phi$. After applying the transformation matrix $\mathbb{U}$ and some algebra the equations in the diabatic basis can be written as:
+The equations above \eqref{eq:nuc_adiab} \& \eqref{eq:elec_adiab} are both in the adiabatic basis. However, to make use of the FOB-formalism detailed in appendix \ref{chap:FOB} already implemented in the CP2K software package \cite{CP2K} these need to be transformed to the orthogonal diabatic basis, $\phi$. After applying the transformation matrix $\mathbb{U}$ and some algebra the equations in the diabatic basis can be written as:
 \begin{dmath}
 { F_{v}^{(I)}(t)} =
 \overbrace{ -\sum_{l,k} u_{l}^{(I) *} u_{k}^{(I)} \nabla_{v} H_{lk}^{(I)} - \sum_{l,k,a} d_{la}^{(I)}H_{ak}^{(I)} - d_{ak}^{(I)}H_{la}^{(I)}}^{\text{Ehrenfest}}
@@ -107,19 +108,19 @@ The equations above \eqref{eq:nuc_adiab} \& \eqref{eq:elec_adiab} are both in th
 & + \underbrace{\sum_{s} U_{ks} \sum_{\nu = 1}^{N_n} \sum_n   \frac{\mathcal{Q}_{sn,\nu}^{(I)}}{\hbar M_\nu}\cdot \left[ \mathbf{f}_{n, \nu}^{(I)}- \mathbf{f}^{(I)}_{s, \nu}\right]\vert C_n^{(I)} \vert^2 \sum_{l} U^{*}_{sl} u^{(I)}_{l}}_{\text{Quantum Momentum}}
 \label{eq:diab_elec}
 \end{align}
-Where $u_l^{(I)}$ represents the diabatic expansion coefficient for (orthogonal) diabatic state l on trajectory I. $H_{kl}^{(I)} = \langle \phi_{k}^{(I)} | H^{(I)} | \phi_{l}^{(I)} \rangle$ is the diabatic Hamiltonian. $d_{kl} = \langle \phi_{k}^{(I)} | \dot{\phi_{l}^{(I)}} \rangle$ is the diabatic non-adiabatic coupling element (NACE). $U_{ks} = \langle \phi_{k} | \psi_{s} \rangle $
-is the adiabatic-diabatic transformation matrix. The other terms have been previously defined (see section
- \label{sec:ad_eqns}).
+Where $u_l^{(I)}$ represents the diabatic expansion coefficient for (orthogonal) diabatic state l on trajectory I. $H_{kl}^{(I)} = \langle \phi_{k}^{(I)} | H^{(I)} | \phi_{l}^{(I)} \rangle$ is the diabatic Hamiltonian. $d_{kl} = \langle \phi_{k}^{(I)} | \dot{\phi_{l}^{(I)}} \rangle$ is the non-adiabatic coupling element (NACE) expressed in the quassi diabatic basis. This is usually very small but not zero due to the basis not being a true diabatic one. $U_{ks} = \langle \phi_{k} | \psi_{s} \rangle $
+is the adiabatic-diabatic transformation matrix. The other terms have been previously defined in the adiabatic equations (see section
+ 2.3.1).
  \\\\
  The 2 expressions can again be decomposed into a quantum momentum part and an Ehrenfest part. In the force expression \eqref{eq:diab_force} the Ehrenfest part comprises 2 terms. In tests I have found the first term  contributes significantly more to the overall force than the second `commutator' term. This means that the second term, can be neglected in most situations. The quantum momentum term in the force expression is expressed in the adiabatic basis. This is because it is basis independent and numerically transforming it with transformation matrices would result in unnecessary computation. The quantum momentum part of the electronic equation \eqref{eq:diab_elec} is largely unchanged compared to the adiabatic one \eqref{eq:elec_adiab} and an on-the-fly transformation from adiabatic to diabatic representations is required during propagation.
  \\\\
- The diabatic hamiltonian, as opposed to the adiabatic one, now contains non-zero off-diagonal elements. This is the primary term responsible for population transfer when in pure adiabatic states. The diabatic NACE has a much smaller effect.
+ The diabatic hamiltonian, as opposed to the adiabatic one, now contains non-zero off-diagonal elements. This is the primary term responsible for population transfer when in pure adiabatic states. The diabatic NACE has a much smaller effect as it is comparatively very small.
  \section{Calculating the Quantum Momentum \label{sec:calc_QM}}
  The technique for calculating the quantum momentum term is outlined in detail in the SI of \cite{min_ab_2017}. The original equations given in \cite{agostini_quantum-classical_2016} present a quantum momentum term without state indices (l,k). This, due to approximations made in the derivation of CTMQC, results in population transfer even when the non-adiabatic couplings between states are zero. Therefore Agostini et al has enforced this with the pair-wise state dependence of the quantum momentum.
  \\\\
 The quantum momentum is defined as:
 \begin{equation}
-  \mathcal{Q}_{\nu}{(I)} = \frac{-\hbar \nabla_{\nu} |\chi^{(I)}|}{|\chi^{(I)}|} \frac{-\hbar \nabla_{\nu} |\chi^{(I)}|^2}{2|\chi^{(I)}|^2}
+  \mathcal{Q}_{\nu}^{(I)} = \frac{-\hbar \nabla_{\nu} |\chi^{(I)}|}{|\chi^{(I)}|} \frac{-\hbar \nabla_{\nu} |\chi^{(I)}|^2}{2|\chi^{(I)}|^2}
   \label{eq:QM_def}
 \end{equation}
 In order to reconstruct the nuclear density Gaussian distributions can be used. This results in a linear expression for the quantum momentum.
@@ -142,6 +143,8 @@ Where the bold notation for vectors has been replaced by normal font indicating 
 
 \section{Testing my Implementation}
 I have implemented a serial version of this algorithm in the CP2K software package \cite{CP2K}. As well as many numerical tests on individual terms in the equations, I have implemented some physical tests too. In this section I will outline some of the key tests I have performed on both the Ehrenfest part of the equations and the full CTMQC equations.
+\\\\
+A typical system for the following tests consists of a dimer of ethylene-like molecules. These are called ethylene-like molecules as their parameters (such as electronic coupling and reorganisation energy) are varied to investigate different regimes. The Hamiltonian is constructed using an analytical overlap method (dicussed in detail in appendix \ref{chap:FOB} and ref \cite{spencer_fob-sh:_2016}). The diagonal elements of this Hamiltonian come from a classical forcefield and the off-diagonal one are assumed to be proportional to the overlap between orbitals on the molecules. This technique circumvents the need for using expensive density functional theory methods to calculate the electronic structure and has been shown to give results for pi-conjugated systems within chemical accuracy \cite{spencer_fob-sh:_2016}.
 \subsection{Rabi Oscillation}
 Rabi Oscillation can be shown to occur in systems that have fixed nuclear geometries (see section \ref{ap:Rabi}). During Rabi oscillation the electronic dynamics are given by an analytic formula. This can be solved in Python and used to test the implementation of the electonic propagation, decoupled from nuclear dynamics. In this test Ehrenfest was used to propagate the system, which consisted of a trimer of an Ethylene-like molecule with 10 replicas. Each of the replicas were initialised with different positions. The electronic propagation of Ehrenfest is the same as that of trajectory surface hopping so I have adapted a previously implemented subroutine from the FOB-SH method \cite{spencer_fob-sh:_2016} to work for many replicas. The results are shown in figure \ref{fig:Rabi}.
 \begin{figure}[H]
@@ -166,7 +169,7 @@ The quantum momentum appears in both the nuclear force equation and the electron
 \\
 Where $\textbf{Y}^{(I)}_{lk, \nu} = |C_{k}^{(J)}(t)|^2 |C_{l}^{(J)}(t)|^2 \left( \textbf{f}_{k, \nu}^{(J)}(t) - \textbf{f}_{l, \nu}^{(J)}(t) \right)$.
 \\\\
-Due to the fact that $\textbf{Y}^{(I)}_{lk, \nu}$ can be both negative and positive, the denominator of the $\textbf{R}_{lk, \nu}$ equation can approach zero. Large spikes in the $\textbf{R}_{lk, \nu}$ will be seen if this term approaches zero faster than the numerator. This can cause large spikes in the $\mathcal{Q}_{lk,\nu}^{(I)}$ resulting in an amplification of any innaccuracies in the $\textbf{Y}^{(I)}_{lk, \nu}$ term. In my simulations this has resulted in a very bad conservation of the norm. A demonstration of this can be seen below in figure \ref{fig:flk_causing_spikes}.
+Due to the fact that $\textbf{Y}^{(I)}_{lk, \nu}$ can be both negative and positive, the denominator of the $\textbf{R}_{lk, \nu}$ equation can approach zero. Large spikes in the $\textbf{R}_{lk, \nu}$ will be seen if this term approaches zero faster than the numerator. This can cause large spikes in the $\mathcal{Q}_{lk,\nu}^{(I)}$ resulting in an amplification of any inaccuracies in the $\textbf{Y}^{(I)}_{lk, \nu}$ term. In my simulations this has resulted in a very bad conservation of the norm. A demonstration of this can be seen below in figure \ref{fig:flk_causing_spikes}.
 This shows that the denominator of the $\textbf{R}^{(I)}_{lk, \nu}$ term approaching zero can cause spikes in the quantum momentum. These spike in the quantum momentum can affect the nuclear and electronic propagation. One way this manifests itself is in bad norm conservation. This is shown in figure \ref{fig:norm_spikes} below, where the large spike in the quantum momentum appears as a discontinuity in the norm.
 \begin{figure}[h]
   \includegraphics[width=\textwidth]{./img/fl_fk_causing_spikes.png}
@@ -188,7 +191,7 @@ By altering the `width' parameter, W, one can set the level of smoothing of the 
   \includegraphics[width=\textwidth]{./img/ManyScaling_NormDriftBetterVersion.png}
   \caption{\label{fig:tanh_result} A figure showing the change in the norm conservation with a varying tanh width for 3 different electronic couplings, 100 meV (top), 10 meV (middle) 1 meV (bottom).}
 \end{figure}
-\noindent An improvement spanning several orders of magnitude can be seen in figure \ref{fig:tanh_result} for all couplings. However, there is still room for improvement, especially in the higher 2 couplings. Renormalisation at each time-step is necessary to correct small average errors, a more eleborate scheme with a dynamic smoothing width may be required for larger more complex systems.
+\noindent An improvement spanning several orders of magnitude can be seen in figure \ref{fig:tanh_result} for all couplings. However, there is still room for improvement, especially in the higher 2 couplings. Renormalisation at each time-step is necessary to correct small average errors, a more elaborate scheme with a dynamic smoothing width may be required for larger more complex systems.
 \\
 \subsection{Time-Derivative of the Sum Over Trajectories of Adiabatic Populations}
 In the supplementary information of Min, 17 \cite{min_ab_2017} a further condition was imposed when deriving the equation for the Quantum Momentum (equation S26). This is given below:

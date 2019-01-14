@@ -430,7 +430,7 @@
 %%%
     \begin{center}%
         {\huge \bfseries \@title}\\[5em]%
-        {\LARGE \itshape \@author}\\%
+        {\huge \itshape \@author}\\%
     \end{center}%
     \vfill%
     \begin{center}%
